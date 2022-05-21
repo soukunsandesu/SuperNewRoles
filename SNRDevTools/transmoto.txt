@@ -585,3 +585,5 @@ ScavengerIsUseVentSetting
 ScavengerOutVentTimeSetting
 ScavengerVentCoolTimeSetting
 ScavengerIsCheckSetting
+EvilObserverName
+EvilObserverTitle1

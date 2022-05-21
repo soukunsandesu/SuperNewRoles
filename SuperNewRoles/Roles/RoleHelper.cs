@@ -508,6 +508,9 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.Scavenger):
                     Roles.RoleClass.Scavenger.ScavengerPlayer.Add(player);
                     break;
+                case (CustomRPC.RoleId.EvilObserver):
+                    Roles.RoleClass.EvilObserver.EvilObserverPlayer.Add(player);
+                    break;
                 //ロールアド
                 default:
                     SuperNewRolesPlugin.Logger.LogError("setRole: no method found for role type {role}");
@@ -771,6 +774,9 @@ namespace SuperNewRoles
                     break;
                 case (CustomRPC.RoleId.Scavenger):
                     Roles.RoleClass.Scavenger.ScavengerPlayer.RemoveAll(ClearRemove);
+                    break;
+                case (CustomRPC.RoleId.EvilObserver):
+                    Roles.RoleClass.EvilObserver.EvilObserverPlayer.RemoveAll(ClearRemove);
                     break;
                 //ロールリモベ
 
@@ -1412,6 +1418,10 @@ namespace SuperNewRoles
             else if (Roles.RoleClass.Scavenger.ScavengerPlayer.IsCheckListPlayerControl(player))
             {
                 return CustomRPC.RoleId.Scavenger;
+            }
+            else if (Roles.RoleClass.EvilObserver.EvilObserverPlayer.IsCheckListPlayerControl(player))
+            {
+                return CustomRPC.RoleId.EvilObserver;
             }
             //ロールチェック
             }

@@ -123,6 +123,7 @@ namespace SuperNewRoles.Roles
             TeleportingJackal.ClearAndReload();
             MadMaker.ClearAndReload();
             Scavenger.ClearAndReload();
+            EvilObserver.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -1758,6 +1759,17 @@ namespace SuperNewRoles.Roles
                 OutVentTime = CustomOptions.ScavengerOutVentTime.getFloat();
                 VentCoolTime = CustomOptions.ScavengerVentCoolTime.getFloat();
                 IsCheck = CustomOptions.ScavengerIsCheck.getBool();
+            }
+        }
+        public static class EvilObserver
+        {
+            public static List<PlayerControl> EvilObserverPlayer;
+            public static Color32 color = ImpostorRed;
+            public static bool IsVoteView;
+            public static void ClearAndReload()
+            {
+                EvilObserverPlayer = new List<PlayerControl>();
+                IsVoteView = true;
             }
         }
         //新ロールクラス

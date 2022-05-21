@@ -586,3 +586,5 @@ ScavengerIsUseVentSetting,Use Vent,ベントの使用
 ScavengerOutVentTimeSetting,Venting Time,ベントに入れる時間
 ScavengerVentCoolTimeSetting,Vent CoolTime,ベントのクールタイム
 ScavengerIsCheckSetting,Check for Impostor and Sheriff and Jackal,インポスター、シェリフ、ジャッカルを確認できる
+EvilObserverName,EvilObserver,イビル選挙管理委員
+EvilObserverTitle1,Let's monitor the voting without permission.,投票を勝手に監視しよう

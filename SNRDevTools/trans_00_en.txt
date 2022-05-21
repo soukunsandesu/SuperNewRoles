@@ -584,3 +584,5 @@ Use Vent
 Venting Time
 Vent CoolTime
 Check for Impostor and Sheriff and Jackal
+EvilObserver
+Let's monitor the voting without permission.

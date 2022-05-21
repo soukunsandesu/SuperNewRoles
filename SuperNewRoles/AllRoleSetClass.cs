@@ -843,6 +843,8 @@ namespace SuperNewRoles
                     return CustomOption.CustomOptions.MadMakerPlayerCount.getFloat();
                 case (RoleId.Scavenger):
                     return CustomOption.CustomOptions.ScavengerPlayerCount.getFloat();
+                    case (RoleId.EvilObserver):
+                    return CustomOption.CustomOptions.EvilObserverPlayerCount.getFloat();
                     //プレイヤーカウント
             }
             return 1;
@@ -2213,6 +2215,22 @@ namespace SuperNewRoles
                     for (int i = 1; i <= OptionDate; i++)
                     {
                         Neutnotonepar.Add(ThisRoleId);
+                    }
+                }
+            }
+        if (!(CustomOption.CustomOptions.EvilObserverOption.getString().Replace("0%", "") == ""))
+            {
+                int OptionDate = int.Parse(CustomOption.CustomOptions.EvilObserverOption.getString().Replace("0%", ""));
+                RoleId ThisRoleId = RoleId.EvilObserver;
+                if (OptionDate == 10)
+                {
+                    Impoonepar.Add(ThisRoleId);
+                }
+                else
+                {
+                    for (int i = 1; i <= OptionDate; i++)
+                    {
+                        Imponotonepar.Add(ThisRoleId);
                     }
                 }
             }
