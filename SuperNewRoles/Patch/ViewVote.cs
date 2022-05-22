@@ -27,9 +27,13 @@ namespace SuperNewRoles.Patch
                 case RoleId.Observer:
                     optdata.AnonymousVotes = !RoleClass.Observer.IsVoteView;
                     break;
-                case RoleId.SubObserver:
-                    optdata.AnonymousVotes = !RoleClass.SubObserver.IsVoteView;
-                    break;
+                    foreach (PlayerControl p in RoleClass.Observer.ObserverPlayer)
+                    {
+                        if (p.isDead())
+                        {
+                            optdata.AnonymousVotes = !RoleClass.SubObserver.IsVoteView;
+                        }
+                    }
             }
             if (player.isDead()) optdata.AnonymousVotes = false;
             optdata.RoleOptions.ShapeshifterLeaveSkin = false;

@@ -1751,7 +1751,7 @@ namespace SuperNewRoles.Roles
             public static void ClearAndReload()
             {
                 SubObserverPlayer = new List<PlayerControl>();
-                IsVoteView = false;
+                IsVoteView = true;
             }
         }
         //新ロールクラス
