@@ -27,8 +27,13 @@ namespace SuperNewRoles.Roles
                     RoleClass.SubObserver.IsVoteView = false;
                     return true;
                 }
+                if (p.isDead())
+                {
+                    SuperNewRolesPlugin.Logger.LogInfo("選管が生きていないと判定されました");
+                    RoleClass.SubObserver.IsVoteView = true;
+                    return true;
+                }
             }
-            SuperNewRolesPlugin.Logger.LogInfo("選管が生きていないと判定されました");
             return false;
         }
     }
