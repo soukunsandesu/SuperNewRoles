@@ -473,6 +473,10 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption MadMakerIsUseVent;
         public static CustomOption MadMakerIsImpostorLight;
 
+        public static CustomRoleOption SubObserverOption;
+        public static CustomOption SubObserverPlayerCount;
+        public static CustomOption ObserverChangeRoleView;
+
         public static CustomOption QuarreledOption;
         public static CustomOption QuarreledTeamCount;
         public static CustomOption QuarreledOnlyCrewMate;
@@ -971,6 +975,10 @@ namespace SuperNewRoles.CustomOption
             MadMakerPlayerCount = CustomOption.Create(412, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], MadMakerOption);
             MadMakerIsUseVent = CustomOption.Create(413, true, CustomOptionType.Crewmate, "MadMateUseVentSetting", false, MadMakerOption);
             MadMakerIsImpostorLight = CustomOption.Create(414, true, CustomOptionType.Crewmate, "MadMateImpostorLightSetting", false, MadMakerOption);
+
+            SubObserverOption = new CustomRoleOption(415, true, CustomOptionType.Crewmate, "SubObserverName", RoleClass.SubObserver.color, 1);
+            SubObserverPlayerCount = CustomOption.Create(416, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], SubObserverOption);
+            ObserverChangeRoleView = CustomOption.Create(417, true, CustomOptionType.Crewmate, "CelebrityChangeRoleViewSetting", false, SubObserverOption);
 
             QuarreledOption = CustomOption.Create(122, false, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
             QuarreledTeamCount = CustomOption.Create(124, false, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);

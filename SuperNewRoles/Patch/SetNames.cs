@@ -286,7 +286,24 @@ namespace SuperNewRoles.Patch
                     }
                 }
             }
+        public static void ObserverSet()
+        {
+            if (RoleClass.Observer.ChangeRoleView)
+            {
+                foreach (PlayerControl p in RoleClass.Observer.ViewPlayers)
+                {
+                    SetPlayerNameColor(p, RoleClass.Observer.color);
+                }
+            }
+            else
+            {
+                foreach (PlayerControl p in RoleClass.Observer.ObserverPlayer)
+                {
+                    SetPlayerNameColor(p, RoleClass.Observer.color);
+                }
+            }
         }
+    }
     public class SetNameUpdate
     {
         public static void Postfix(PlayerControl __instance)
@@ -401,6 +418,7 @@ namespace SuperNewRoles.Patch
                 SetNamesClass.SetPlayerNameColors(PlayerControl.LocalPlayer);
             }
             SetNamesClass.CelebritySet();
+            SetNamesClass.ObserverSet();
             SetNamesClass.QuarreledSet();
             SetNamesClass.LoversSet();
             try

@@ -122,6 +122,7 @@ namespace SuperNewRoles.Roles
             RemoteSheriff.ClearAndReload();
             TeleportingJackal.ClearAndReload();
             MadMaker.ClearAndReload();
+            SubObserver.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -1532,10 +1533,14 @@ namespace SuperNewRoles.Roles
             public static List<PlayerControl> ObserverPlayer;
             public static Color32 color = new Color32(127, 127, 127, byte.MaxValue);
             public static bool IsVoteView;
+            public static bool ChangeRoleView;
+            public static List<PlayerControl> ViewPlayers;
             public static void ClearAndReload()
             {
                 ObserverPlayer = new List<PlayerControl>();
                 IsVoteView = true;
+                ChangeRoleView = CustomOptions.ObserverChangeRoleView.getBool();
+                ViewPlayers = new List<PlayerControl>();
             }
         }
         public static class Vampire
@@ -1736,6 +1741,17 @@ namespace SuperNewRoles.Roles
                 IsImpostorLight = CustomOptions.MadMakerIsImpostorLight.getBool();
                 IsCreateMadmate = false;
                 CreatePlayers = new List<int>();
+            }
+        }
+        public static class SubObserver
+        {
+            public static List<PlayerControl> SubObserverPlayer;
+            public static Color32 color = new Color32(127, 127, 127, byte.MaxValue);
+            public static bool IsVoteView;
+            public static void ClearAndReload()
+            {
+                SubObserverPlayer = new List<PlayerControl>();
+                IsVoteView = true;
             }
         }
         //新ロールクラス

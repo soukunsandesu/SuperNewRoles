@@ -45,6 +45,9 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 case RoleId.Observer:
                     optdata.AnonymousVotes = !RoleClass.Observer.IsVoteView;
                     break;
+                case RoleId.SubObserver:
+                    optdata.AnonymousVotes = !RoleClass.SubObserver.IsVoteView;
+                    break;
                 case RoleId.MadMate:
                     if (RoleClass.MadMate.IsUseVent)
                     {

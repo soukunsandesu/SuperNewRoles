@@ -477,6 +477,7 @@ namespace SuperNewRoles
                     break;
                 case (CustomRPC.RoleId.Observer):
                     Roles.RoleClass.Observer.ObserverPlayer.Add(player);
+                    Roles.RoleClass.Observer.ViewPlayers.Add(player);
                     break;
                 case (CustomRPC.RoleId.Vampire):
                     Roles.RoleClass.Vampire.VampirePlayer.Add(player);
@@ -504,6 +505,9 @@ namespace SuperNewRoles
                     break;
                 case (CustomRPC.RoleId.MadMaker):
                     Roles.RoleClass.MadMaker.MadMakerPlayer.Add(player);
+                    break;
+                case (CustomRPC.RoleId.SubObserver):
+                    Roles.RoleClass.SubObserver.SubObserverPlayer.Add(player);
                     break;
                 //ロールアド
                 default:
@@ -709,7 +713,7 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.MadMayor):
                     Roles.RoleClass.MadMayor.MadMayorPlayer.RemoveAll(ClearRemove);
                     break;
-                    case (CustomRPC.RoleId.MadStuntMan):
+                case (CustomRPC.RoleId.MadStuntMan):
                     Roles.RoleClass.MadStuntMan.MadStuntManPlayer.RemoveAll(ClearRemove);
                     break;
                 case (CustomRPC.RoleId.MadHawk):
@@ -739,7 +743,7 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.Observer):
                     Roles.RoleClass.Observer.ObserverPlayer.RemoveAll(ClearRemove);
                     break;
-                    case (CustomRPC.RoleId.Vampire):
+                case (CustomRPC.RoleId.Vampire):
                     Roles.RoleClass.Vampire.VampirePlayer.RemoveAll(ClearRemove);
                     break;
                 case (CustomRPC.RoleId.Fox):
@@ -765,6 +769,9 @@ namespace SuperNewRoles
                     break;
                 case (CustomRPC.RoleId.MadMaker):
                     Roles.RoleClass.MadMaker.MadMakerPlayer.RemoveAll(ClearRemove);
+                    break;
+                case (CustomRPC.RoleId.SubObserver):
+                    Roles.RoleClass.SubObserver.SubObserverPlayer.RemoveAll(ClearRemove);
                     break;
                 //ロールリモベ
 
@@ -1395,6 +1402,10 @@ namespace SuperNewRoles
             else if (Roles.RoleClass.MadMaker.MadMakerPlayer.IsCheckListPlayerControl(player))
             {
                 return CustomRPC.RoleId.MadMaker;
+            }
+            else if (Roles.RoleClass.SubObserver.SubObserverPlayer.IsCheckListPlayerControl(player))
+            {
+                return CustomRPC.RoleId.SubObserver;
             }
             //ロールチェック
             }
