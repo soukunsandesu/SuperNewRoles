@@ -217,6 +217,9 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     if (switchSystemNocturnality == null || !switchSystemNocturnality.IsActive)
                     {
                         optdata.CrewLightMod /= 5;
+                    } else
+                    {
+                        optdata.CrewLightMod *= 5;
                     }
                     break;
                 case RoleId.SelfBomber:

@@ -980,10 +980,11 @@ namespace SuperNewRoles.CustomOption
             SubObserverPlayerCount = CustomOption.Create(416, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], SubObserverOption);
             ObserverChangeRoleView = CustomOption.Create(417, true, CustomOptionType.Crewmate, "CelebrityChangeRoleViewSetting", false, SubObserverOption);
 
-            QuarreledOption = CustomOption.Create(122, false, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
-            QuarreledTeamCount = CustomOption.Create(124, false, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);
-            QuarreledOnlyCrewMate = CustomOption.Create(123, false, CustomOptionType.Neutral, "QuarreledOnlyCrewMateSetting", false, QuarreledOption);
             
+            QuarreledOption = CustomOption.Create(122, true, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
+            QuarreledTeamCount = CustomOption.Create(124, true, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);
+            QuarreledOnlyCrewMate = CustomOption.Create(123, true, CustomOptionType.Neutral, "QuarreledOnlyCrewMateSetting", false, QuarreledOption);
+
             LoversOption = CustomOption.Create(221, true, CustomOptionType.Neutral, cs(RoleClass.Lovers.color, "LoversName"), false, null, isHeader: true);
             LoversTeamCount = CustomOption.Create(222, true, CustomOptionType.Neutral, "LoversTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], LoversOption);
             LoversPar = CustomOption.Create(223, true, CustomOptionType.Neutral, "LoversParSetting", rates , LoversOption);
