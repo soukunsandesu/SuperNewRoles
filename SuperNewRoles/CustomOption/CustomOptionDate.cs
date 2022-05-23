@@ -473,6 +473,19 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption MadMakerIsUseVent;
         public static CustomOption MadMakerIsImpostorLight;
 
+        public static CustomRoleOption DemonOption;
+        public static CustomOption DemonPlayerCount;
+        public static CustomOption DemonCoolTime;
+        public static CustomOption DemonIsUseVent;
+        public static CustomOption DemonIsCheckImpostor;
+        public static CustomOption DemonIsAliveWin;
+
+        public static CustomRoleOption TaskManagerOption;
+        public static CustomOption TaskManagerPlayerCount;
+        public static CustomOption TaskManagerCommonTask;
+        public static CustomOption TaskManagerShortTask;
+        public static CustomOption TaskManagerLongTask;
+
         public static CustomRoleOption SubObserverOption;
         public static CustomOption SubObserverPlayerCount;
         public static CustomOption ObserverChangeRoleView;
@@ -976,6 +989,20 @@ namespace SuperNewRoles.CustomOption
             MadMakerIsUseVent = CustomOption.Create(413, true, CustomOptionType.Crewmate, "MadMateUseVentSetting", false, MadMakerOption);
             MadMakerIsImpostorLight = CustomOption.Create(414, true, CustomOptionType.Crewmate, "MadMateImpostorLightSetting", false, MadMakerOption);
 
+            DemonOption = new CustomRoleOption(415, true, CustomOptionType.Neutral, "DemonName", RoleClass.Demon.color, 1);
+            DemonPlayerCount = CustomOption.Create(416, true, CustomOptionType.Neutral, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], DemonOption);
+            DemonCoolTime = CustomOption.Create(417, true, CustomOptionType.Neutral, "NiceScientistCoolDownSetting", 30f, 2.5f, 60f, 2.5f, DemonOption, format: "unitSeconds");
+            DemonIsUseVent = CustomOption.Create(418, true, CustomOptionType.Neutral, "MadMateUseVentSetting", false, DemonOption);
+            DemonIsCheckImpostor = CustomOption.Create(419, true, CustomOptionType.Neutral, "MadMateIsCheckImpostorSetting", false, DemonOption);
+            DemonIsAliveWin = CustomOption.Create(420, true, CustomOptionType.Neutral, "DemonIsAliveWinSetting", false, DemonOption);
+
+            TaskManagerOption = new CustomRoleOption(423, true, CustomOptionType.Crewmate, "TaskManagerName", RoleClass.TaskManager.color, 1);
+            TaskManagerPlayerCount = CustomOption.Create(421, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], TaskManagerOption);
+            var taskmanageroption = SelectTask.TaskSetting(422, 425, 424, TaskManagerOption, CustomOptionType.Crewmate, true);
+            TaskManagerCommonTask = taskmanageroption.Item1;
+            TaskManagerShortTask = taskmanageroption.Item2;
+            TaskManagerLongTask = taskmanageroption.Item3;
+            
             SubObserverOption = new CustomRoleOption(415, true, CustomOptionType.Crewmate, "SubObserverName", RoleClass.SubObserver.color, 1);
             SubObserverPlayerCount = CustomOption.Create(416, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], SubObserverOption);
             ObserverChangeRoleView = CustomOption.Create(417, true, CustomOptionType.Crewmate, "CelebrityChangeRoleViewSetting", false, SubObserverOption);

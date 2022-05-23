@@ -837,11 +837,15 @@ namespace SuperNewRoles
                     return CustomOption.CustomOptions.RemoteSheriffPlayerCount.getFloat();
                 case (RoleId.Fox):
                     return CustomOption.CustomOptions.FoxPlayerCount.getFloat();
-                    case (RoleId.TeleportingJackal):
+                case (RoleId.TeleportingJackal):
                     return CustomOption.CustomOptions.TeleportingJackalPlayerCount.getFloat();
-                    case (RoleId.MadMaker):
+                case (RoleId.MadMaker):
                     return CustomOption.CustomOptions.MadMakerPlayerCount.getFloat();
-                    case (RoleId.SubObserver):
+                case (RoleId.Demon):
+                    return CustomOption.CustomOptions.DemonPlayerCount.getFloat();
+                case (RoleId.TaskManager):
+                    return CustomOption.CustomOptions.TaskManagerPlayerCount.getFloat();
+                case (RoleId.SubObserver):
                     return CustomOption.CustomOptions.SubObserverPlayerCount.getFloat();
                     //プレイヤーカウント
             }
@@ -2188,6 +2192,38 @@ namespace SuperNewRoles
             {
                 int OptionDate = int.Parse(CustomOption.CustomOptions.MadMakerOption.getString().Replace("0%", ""));
                 RoleId ThisRoleId = RoleId.MadMaker;
+                if (OptionDate == 10)
+                {
+                    Crewonepar.Add(ThisRoleId);
+                }
+                else
+                {
+                    for (int i = 1; i <= OptionDate; i++)
+                    {
+                        Crewnotonepar.Add(ThisRoleId);
+                    }
+                }
+            }
+            if (!(CustomOption.CustomOptions.DemonOption.getString().Replace("0%", "") == ""))
+            {
+                int OptionDate = int.Parse(CustomOption.CustomOptions.DemonOption.getString().Replace("0%", ""));
+                RoleId ThisRoleId = RoleId.Demon;
+                if (OptionDate == 10)
+                {
+                    Neutonepar.Add(ThisRoleId);
+                } else
+                {
+                    for (int i = 1; i <= OptionDate; i++)
+                    {
+                        Neutnotonepar.Add(ThisRoleId);
+                    }
+                }
+            }
+
+        if (!(CustomOption.CustomOptions.TaskManagerOption.getString().Replace("0%", "") == ""))
+            {
+                int OptionDate = int.Parse(CustomOption.CustomOptions.TaskManagerOption.getString().Replace("0%", ""));
+                RoleId ThisRoleId = RoleId.TaskManager;
                 if (OptionDate == 10)
                 {
                     Crewonepar.Add(ThisRoleId);
