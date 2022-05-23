@@ -13,6 +13,7 @@ using SuperNewRoles.Helpers;
 
 namespace SuperNewRoles.Roles
 {
+    [HarmonyPatch(typeof(ExileController), nameof(ExileController.Begin))]
     public class SubObserver
     {
         //生存判定

@@ -187,127 +187,11 @@ namespace SuperNewRoles.Patch
         public static void SetPlayerRoleInfo(PlayerControl p)
         {
             if (p.IsBot()) return;
-                string roleNames;
-                Color roleColors;
-                var role = p.getRole();
-                if (role == CustomRPC.RoleId.DefaultRole || (role == CustomRPC.RoleId.Bestfalsecharge && p.isAlive())) {
-                    if (p.Data.Role.IsImpostor)
-                    {
-                        roleNames = "ImpostorName";
-                        roleColors = Roles.RoleClass.ImpostorRed;
-                    }
-                    else
-                    {
-                        roleNames = "CrewMateName";
-                        roleColors = Roles.RoleClass.CrewmateWhite;
-                    }
-                } else
-                {
-                    var introdate = Intro.IntroDate.GetIntroDate(role);
-                    roleNames = introdate.NameKey + "Name";
-                    roleColors = introdate.color;
-                }
-                SetPlayerRoleInfoView(p, roleColors, roleNames);
-            }
-            public static void SetPlayerNameColors(PlayerControl player)
-            {
-                var role = player.getRole();
-                if (role == CustomRPC.RoleId.DefaultRole || (role == CustomRPC.RoleId.Bestfalsecharge && player.isAlive())) return;
-                SetPlayerNameColor(player, Intro.IntroDate.GetIntroDate(role).color);
-            }
-            public static void SetPlayerRoleNames(PlayerControl player)
-            {
-                SetPlayerRoleInfo(player);
-            }
-            public static void QuarreledSet()
-            {
-                string suffix = ModHelpers.cs(RoleClass.Quarreled.color, "○");
-                if (PlayerControl.LocalPlayer.IsQuarreled() && PlayerControl.LocalPlayer.isAlive())
-                {
-                    PlayerControl side = PlayerControl.LocalPlayer.GetOneSideQuarreled();
-                    SetPlayerNameText(PlayerControl.LocalPlayer, PlayerControl.LocalPlayer.nameText.text + suffix);
-                    if (!side.Data.Disconnected)
-                    {
-                        SetPlayerNameText(side, side.nameText.text + suffix);
-                    }
-                }
-                if (!PlayerControl.LocalPlayer.isAlive() && RoleClass.Quarreled.QuarreledPlayer != new List<List<PlayerControl>>())
-                {
-                    foreach (List<PlayerControl> ps in RoleClass.Quarreled.QuarreledPlayer) {
-                        foreach (PlayerControl p in ps)
-                        {
-                            if (!p.Data.Disconnected)
-                            {
-                                SetPlayerNameText(p, p.nameText.text + suffix);
-                            }
-                        }
-                    }
-                }
-            }
-            public static void LoversSet()
-            {
-                string suffix = ModHelpers.cs(RoleClass.Lovers.color, " ♥");
-                if (PlayerControl.LocalPlayer.IsLovers() && PlayerControl.LocalPlayer.isAlive())
-                {
-                    PlayerControl side = PlayerControl.LocalPlayer.GetOneSideLovers();
-                    SetPlayerNameText(PlayerControl.LocalPlayer, PlayerControl.LocalPlayer.nameText.text + suffix);
-                    if (!side.Data.Disconnected)
-                    {
-                        SetPlayerNameText(side, side.nameText.text + suffix);
-                    }
-                }
-                if (PlayerControl.LocalPlayer.isDead() && RoleClass.Lovers.LoversPlayer != new List<List<PlayerControl>>())
-                {
-                    foreach (List<PlayerControl> ps in RoleClass.Lovers.LoversPlayer)
-                    {
-                        foreach (PlayerControl p in ps)
-                        {
-                            if (!p.Data.Disconnected)
-                            {
-                                SetPlayerNameText(p, p.nameText.text + suffix);
-                            }
-                        }
-                    }
-                }
-            }
-            public static void CelebritySet()
-            {
-                if (RoleClass.Celebrity.ChangeRoleView)
-                {
-                    foreach (PlayerControl p in RoleClass.Celebrity.ViewPlayers)
-                    {
-                        SetPlayerNameColor(p, RoleClass.Celebrity.color);
-                    }
-                } else
-                {
-                    foreach (PlayerControl p in RoleClass.Celebrity.CelebrityPlayer)
-                    {
-                        SetPlayerNameColor(p, RoleClass.Celebrity.color);
-                    }
-                }
-            }
-        public static void ObserverSet()
-        {
-            if (RoleClass.Observer.ChangeRoleView)
-            {
-                foreach (PlayerControl p in RoleClass.Observer.ViewPlayers)
-                {
-                    SetPlayerNameColor(p, RoleClass.Observer.color);
-                }
-            }
-            else
-            {
-                foreach (PlayerControl p in RoleClass.Observer.ObserverPlayer)
-                {
-                    SetPlayerNameColor(p, RoleClass.Observer.color);
-                }
-            }
-        }
-    }
             string roleNames;
             Color roleColors;
             var role = p.getRole();
-            if (role == CustomRPC.RoleId.DefaultRole || (role == CustomRPC.RoleId.Bestfalsecharge && p.isAlive())) {
+            if (role == CustomRPC.RoleId.DefaultRole || (role == CustomRPC.RoleId.Bestfalsecharge && p.isAlive()))
+            {
                 if (p.Data.Role.IsImpostor)
                 {
                     roleNames = "ImpostorName";
@@ -318,7 +202,8 @@ namespace SuperNewRoles.Patch
                     roleNames = "CrewMateName";
                     roleColors = Roles.RoleClass.CrewmateWhite;
                 }
-            } else
+            }
+            else
             {
                 var introdate = Intro.IntroDate.GetIntroDate(role);
                 roleNames = introdate.NameKey + "Name";
@@ -350,7 +235,8 @@ namespace SuperNewRoles.Patch
             }
             if (!PlayerControl.LocalPlayer.isAlive() && RoleClass.Quarreled.QuarreledPlayer != new List<List<PlayerControl>>())
             {
-                foreach (List<PlayerControl> ps in RoleClass.Quarreled.QuarreledPlayer) {
+                foreach (List<PlayerControl> ps in RoleClass.Quarreled.QuarreledPlayer)
+                {
                     foreach (PlayerControl p in ps)
                     {
                         if (!p.Data.Disconnected)
@@ -373,7 +259,7 @@ namespace SuperNewRoles.Patch
                     SetPlayerNameText(side, side.nameText.text + suffix);
                 }
             }
-            if ((PlayerControl.LocalPlayer.isDead() || PlayerControl.LocalPlayer.isRole(RoleId.God))&& RoleClass.Lovers.LoversPlayer != new List<List<PlayerControl>>())
+            if ((PlayerControl.LocalPlayer.isDead() || PlayerControl.LocalPlayer.isRole(RoleId.God)) && RoleClass.Lovers.LoversPlayer != new List<List<PlayerControl>>())
             {
                 foreach (List<PlayerControl> ps in RoleClass.Lovers.LoversPlayer)
                 {
@@ -411,13 +297,35 @@ namespace SuperNewRoles.Patch
                 {
                     SetPlayerNameColor(p, RoleClass.Celebrity.color);
                 }
-            } else
+            }
+            else
             {
                 foreach (PlayerControl p in RoleClass.Celebrity.CelebrityPlayer)
                 {
                     SetPlayerNameColor(p, RoleClass.Celebrity.color);
                 }
             }
+        }
+        public static void ObserverSet()
+        {
+            if (PlayerControl.LocalPlayer.isRole(RoleId.SubObserver))
+            {
+                if (RoleClass.Observer.ChangeRoleView)
+                {
+                    foreach (PlayerControl p in RoleClass.Observer.ViewPlayers)
+                    {
+                        SetPlayerNameColor(p, RoleClass.Observer.color);
+                    }
+                }
+                else
+                {
+                    foreach (PlayerControl p in RoleClass.Observer.ObserverPlayer)
+                    {
+                        SetPlayerNameColor(p, RoleClass.Observer.color);
+                    }
+                }
+            }
+
         }
     }
     public class SetNameUpdate
@@ -503,9 +411,9 @@ namespace SuperNewRoles.Patch
                 SetNamesClass.SetPlayerRoleNames(PlayerControl.LocalPlayer);
                 SetNamesClass.SetPlayerNameColors(PlayerControl.LocalPlayer);
             }
+            SetNamesClass.ObserverSet();
             SetNamesClass.DemonSet();
             SetNamesClass.CelebritySet();
-            SetNamesClass.ObserverSet();
             SetNamesClass.QuarreledSet();
             SetNamesClass.LoversSet();
             try
