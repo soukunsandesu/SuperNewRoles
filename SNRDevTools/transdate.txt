@@ -585,3 +585,5 @@ DemonIsAliveWinSetting,You have to be alive to win.,生存していないと勝�
 DemonButtonName,Curse,呪う
 TaskManagerName,TaskManager,タスクマネージャー
 TaskManagerTitle1,Finish the task and mount up!,タスクを終わらせ、マウントを取ろう
+SubObserverName,SubObserver,副選挙管理委員
+SubObserverTitle1,Take over the capacity of the observer.,選挙管理委員の能力を引き継ごう

@@ -2343,6 +2343,14 @@
  "TaskManagerTitle1" : {
         "0" : "Finish the task and mount up!" ,
         "11" : "\u30bf\u30b9\u30af\u3092\u7d42\u308f\u3089\u305b\u3001\u30de\u30a6\u30f3\u30c8\u3092\u53d6\u308d\u3046"
+        } ,
+ "SubObserverName" : {
+        "0" : "SubObserver" ,
+        "11" : "\u526f\u9078\u6319\u7ba1\u7406\u59d4\u54e1"
+        } ,
+ "SubObserverTitle1" : {
+        "0" : "Take over the capacity of the observer." ,
+        "11" : "\u9078\u6319\u7ba1\u7406\u59d4\u54e1\u306e\u80fd\u529b\u3092\u5f15\u304d\u7d99\u3054\u3046"
         } 
 
 }

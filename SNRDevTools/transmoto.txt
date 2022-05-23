@@ -584,3 +584,5 @@ DemonIsAliveWinSetting
 DemonButtonName
 TaskManagerName
 TaskManagerTitle1
+SubObserverName
+SubObserverTitle1
