@@ -45,13 +45,10 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 case RoleId.Observer:
                     optdata.AnonymousVotes = !RoleClass.Observer.IsVoteView;
                     break;
-                    foreach (PlayerControl p in RoleClass.Observer.ObserverPlayer)
-                    {
-                        if (p.isDead())
-                        {
-                            optdata.AnonymousVotes = !RoleClass.SubObserver.IsVoteView;
-                        }
-                    }
+                case RoleId.SubObserver:
+                    optdata.AnonymousVotes = !RoleClass.SubObserver.IsVoteView;
+                    break;
+
                 case RoleId.MadMate:
                     if (RoleClass.MadMate.IsUseVent)
                     {
