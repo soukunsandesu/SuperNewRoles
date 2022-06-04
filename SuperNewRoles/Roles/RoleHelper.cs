@@ -923,7 +923,7 @@ namespace SuperNewRoles
                 case (RoleId.MadMaker):
                     IsTaskClear = true;
                     break;
-                    case (RoleId.Metamorphose):
+                case (RoleId.Metamorphose):
                     IsTaskClear = true;
                     break; 
                 //タスククリアか
@@ -985,6 +985,8 @@ namespace SuperNewRoles
                 case RoleId.SidekickSeer:
                 case RoleId.JackalSeer:
                     return RoleClass.Jackal.IsUseVent;
+                case RoleId.Metamorphose:
+                    return RoleClass.Metamorphose.IsUseVent;
                     /*
                     case RoleId.Scavenger:
                         return RoleClass.Scavenger.IsUseVent;
@@ -1075,6 +1077,8 @@ namespace SuperNewRoles
                 case RoleId.JackalSeer:
                 case RoleId.SidekickSeer:
                     return RoleClass.Jackal.IsImpostorLight;
+                case RoleId.Metamorphose:
+                    return RoleClass.Metamorphose.IsImpostorLight;
             }
             return false;
         }
