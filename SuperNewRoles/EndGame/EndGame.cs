@@ -1122,7 +1122,7 @@ namespace SuperNewRoles.EndGame
         }
         public static bool CheckAndEndGameForMetamorphoseWin(ShipStatus __instance, PlayerStatistics statistics)
         {
-            if (statistics.TeamMetamorphoseAlive >= statistics.TotalAlive - statistics.TeamMetamorphoseAlive && statistics.TeamImpostorsAlive == 0)
+            if (statistics.TeamMetamorphoseAlive >= statistics.TotalAlive - statistics.TeamMetamorphoseAlive)
             {
                 __instance.enabled = false;
                 CustomEndGame((GameOverReason)CustomGameOverReason.MetamorphoseWin, false);
