@@ -1989,7 +1989,7 @@ namespace SuperNewRoles.Roles
                 IsCreateSheriff = false;
             }
         }
-                public static class Metamorphose
+        public static class Metamorphose
         {
             public static List<PlayerControl> MetamorphosePlayer;
             public static Color32 color = new Color32(221, 160, 221, byte.MaxValue);
