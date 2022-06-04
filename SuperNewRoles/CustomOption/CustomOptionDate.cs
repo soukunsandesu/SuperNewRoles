@@ -500,6 +500,11 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption ArsonistDurationTime;
         public static CustomOption ArsonistIsUseVent;
 
+        public static CustomRoleOption MetamorphoseOption;
+        public static CustomOption MetamorphosePlayerCount;
+        public static CustomOption MetamorphoseIsUseVent;
+        public static CustomOption MetamorphoseIsImpostorLight;
+
         public static CustomRoleOption SeerFriendsOption;
         public static CustomOption SeerFriendsPlayerCount;
         public static CustomOption SeerFriendsMode;
@@ -1093,6 +1098,10 @@ namespace SuperNewRoles.CustomOption
             ChiefPlayerCount = CustomOption.Create(468, false, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], ChiefOption);
             SheriffCoolTime = CustomOption.Create(28, true, CustomOptionType.Crewmate, ModTranslation.getString("SheriffCoolDownSetting"), 30f, 2.5f, 60f, 2.5f, ChiefOption, format: "unitSeconds");
 
+            MetamorphoseOption = new CustomRoleOption(411, false, CustomOptionType.Neutral, "MetamorphoseName", RoleClass.Metamorphose.color, 1);
+            MetamorphosePlayerCount = CustomOption.Create(412, false, CustomOptionType.Neutral, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], MetamorphoseOption);
+            MetamorphoseIsUseVent = CustomOption.Create(413, false, CustomOptionType.Neutral, "MadMateUseVentSetting", false, MetamorphoseOption);
+            MetamorphoseIsImpostorLight = CustomOption.Create(414, false, CustomOptionType.Neutral, "MadMateImpostorLightSetting", false, MetamorphoseOption);
 
             QuarreledOption = CustomOption.Create(122, true, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
             QuarreledTeamCount = CustomOption.Create(124, true, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);

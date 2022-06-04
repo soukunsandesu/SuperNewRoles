@@ -533,6 +533,9 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.Chief):
                     Roles.RoleClass.Chief.ChiefPlayer.Add(player);
                     break;
+                case (CustomRPC.RoleId.Metamorphose):
+                    Roles.RoleClass.Metamorphose.MetamorphosePlayer.Add(player);
+                    break;
                 //ロールアド
                 default:
                     SuperNewRolesPlugin.Logger.LogError("setRole: no method found for role type {role}");
@@ -815,7 +818,10 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.Chief):
                     Roles.RoleClass.Chief.ChiefPlayer.RemoveAll(ClearRemove);
                     break;
-                    //ロールリモベ
+                    case (CustomRPC.RoleId.Metamorphose):
+                    Roles.RoleClass.Metamorphose.MetamorphosePlayer.RemoveAll(ClearRemove);
+                    break;
+                //ロールリモベ
 
             }
             ChacheManager.ResetMyRoleChache();
@@ -917,7 +923,10 @@ namespace SuperNewRoles
                 case (RoleId.MadMaker):
                     IsTaskClear = true;
                     break;
-                    //タスククリアか
+                    case (RoleId.Metamorphose):
+                    IsTaskClear = true;
+                    break; 
+                //タスククリアか
             }
             if (!IsTaskClear && ModeHandler.isMode(ModeId.SuperHostRoles) && (player.isRole(RoleId.Sheriff) || player.isRole(RoleId.RemoteSheriff)))
             {
@@ -1128,7 +1137,10 @@ namespace SuperNewRoles
                 case (RoleId.Arsonist):
                     IsNeutral = true;
                     break;
-                    //第三か
+                    case (RoleId.Metamorphose):
+                    IsNeutral = true;
+                    break;
+                //第三か
             }
             return IsNeutral;
         }
@@ -1594,7 +1606,11 @@ namespace SuperNewRoles
                 {
                     return CustomRPC.RoleId.Chief;
                 }
-                //ロールチェック
+                else if (Roles.RoleClass.Metamorphose.MetamorphosePlayer.IsCheckListPlayerControl(player))
+            {
+                return CustomRPC.RoleId.Metamorphose;
+            }
+            //ロールチェック
             }
             catch (Exception e)
             {

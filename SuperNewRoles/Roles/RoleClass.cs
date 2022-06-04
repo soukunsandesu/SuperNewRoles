@@ -135,6 +135,7 @@ namespace SuperNewRoles.Roles
             JackalSeer.ClearAndReload();
             Arsonist.ClearAndReload();
             Chief.ClearAndReload();
+            Metamorphose.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -1986,6 +1987,23 @@ namespace SuperNewRoles.Roles
             {
                 ChiefPlayer = new List<PlayerControl>();
                 IsCreateSheriff = false;
+            }
+        }
+                public static class Metamorphose
+        {
+            public static List<PlayerControl> MetamorphosePlayer;
+            public static Color32 color = new Color32(221, 160, 221, byte.MaxValue);
+            public static bool IsUseVent;
+            public static bool IsImpostorLight;
+            public static bool IsCreateMetamorphose;
+            public static List<int> CreatePlayers;
+            public static void ClearAndReload()
+            {
+                MetamorphosePlayer = new List<PlayerControl>();
+                IsUseVent = CustomOptions.MetamorphoseIsUseVent.getBool();
+                IsImpostorLight = CustomOptions.MetamorphoseIsImpostorLight.getBool();
+                IsCreateMetamorphose = false;
+                CreatePlayers = new List<int>();
             }
         }
         //新ロールクラス
