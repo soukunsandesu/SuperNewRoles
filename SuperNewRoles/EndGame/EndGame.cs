@@ -37,6 +37,7 @@ namespace SuperNewRoles.EndGame
         DemonWin,
         ArsonistWin,
         VultureWin,
+        MetamorphoseWin,
         BugEnd
     }
     [HarmonyPatch(typeof(ShipStatus))]
@@ -229,6 +230,11 @@ namespace SuperNewRoles.EndGame
                     text = "VultureName";
                     textRenderer.color = RoleClass.Vulture.color;
                     __instance.BackgroundBar.material.SetColor("_Color", RoleClass.Vulture.color);
+                    break;
+                case WinCondition.MetamorphoseWin:
+                    text = "MetamorphoseName";
+                    textRenderer.color = RoleClass.Metamorphose.color;
+                    __instance.BackgroundBar.material.SetColor("_Color", RoleClass.Metamorphose.color);
                     break;
                 default:
                     switch (AdditionalTempData.gameOverReason)
@@ -528,6 +534,7 @@ namespace SuperNewRoles.EndGame
             notWinners.AddRange(RoleClass.JackalSeer.SidekickSeerPlayer);
             notWinners.AddRange(RoleClass.Arsonist.ArsonistPlayer);
             notWinners.AddRange(RoleClass.Vulture.VulturePlayer);
+            notWinners.AddRange(RoleClass.Metamorphose.MetamorphosePlayer);
 
             foreach (PlayerControl p in RoleClass.Survivor.SurvivorPlayer)
             {
@@ -558,6 +565,7 @@ namespace SuperNewRoles.EndGame
             bool DemonWin = gameOverReason == (GameOverReason)CustomGameOverReason.DemonWin;
             bool ArsonistWin = gameOverReason == (GameOverReason)CustomGameOverReason.ArsonistWin;
             bool VultureWin = gameOverReason == (GameOverReason)CustomGameOverReason.VultureWin;
+            bool MetamorphoseWin = gameOverReason == (GameOverReason)CustomGameOverReason.MetamorphoseWin;
             bool BUGEND = gameOverReason == (GameOverReason)CustomGameOverReason.BugEnd;
             if (ModeHandler.isMode(ModeId.SuperHostRoles) && EndData != null)
             {
@@ -571,6 +579,7 @@ namespace SuperNewRoles.EndGame
                 DemonWin = EndData == CustomGameOverReason.DemonWin;
                 ArsonistWin = EndData == CustomGameOverReason.ArsonistWin;
                 VultureWin = EndData == CustomGameOverReason.VultureWin;
+                MetamorphoseWin = EndData == CustomGameOverReason.MetamorphoseWin;
             }
 
 
@@ -691,6 +700,13 @@ namespace SuperNewRoles.EndGame
                 WinningPlayerData wpd = new WinningPlayerData(WinnerPlayer.Data);
                 TempData.winners.Add(wpd);
                 AdditionalTempData.winCondition = WinCondition.VultureWin;
+            }
+            else if (MetamorphoseWin)
+            {
+                TempData.winners = new Il2CppSystem.Collections.Generic.List<WinningPlayerData>();
+                WinningPlayerData wpd = new WinningPlayerData(WinnerPlayer.Data);
+                TempData.winners.Add(wpd);
+                AdditionalTempData.winCondition = WinCondition.MetamorphoseWin;
             }
 
             if (TempData.winners.ToArray().Any(x => x.IsImpostor))
@@ -984,6 +1000,7 @@ namespace SuperNewRoles.EndGame
                 if (CheckAndEndGameForEgoistWin(__instance, statistics)) return false;
                 if (CheckAndEndGameForImpostorWin(__instance, statistics)) return false;
                 if (CheckAndEndGameForWorkpersonWin(__instance)) return false;
+                if (CheckAndEndGameForMetamorphoseWin(__instance, statistics)) return false;
                 if (!PlusModeHandler.isMode(PlusModeId.NotTaskWin) && CheckAndEndGameForTaskWin(__instance)) return false;
             }
             return false;
@@ -1103,6 +1120,16 @@ namespace SuperNewRoles.EndGame
             }
             return false;
         }
+        public static bool CheckAndEndGameForMetamorphoseWin(ShipStatus __instance, PlayerStatistics statistics)
+        {
+            if (statistics.TeamMetamorphoseAlive >= statistics.TotalAlive - statistics.TeamMetamorphoseAlive && statistics.TeamImpostorsAlive == 0)
+            {
+                __instance.enabled = false;
+                CustomEndGame((GameOverReason)CustomGameOverReason.MetamorphoseWin, false);
+                return true;
+            }
+            return false;
+        }
 
 
         public static bool CheckAndEndGameForCrewmateWin(ShipStatus __instance, PlayerStatistics statistics)
@@ -1160,6 +1187,7 @@ namespace SuperNewRoles.EndGame
             public int TotalAlive { get; set; }
             public int TeamJackalAlive { get; set; }
             public int EgoistAlive { get; set; }
+            public int TeamMetamorphoseAlive { get; set; }
             public PlayerStatistics(ShipStatus __instance)
             {
                 GetPlayerCounts();
@@ -1170,6 +1198,7 @@ namespace SuperNewRoles.EndGame
                 int numCrewAlive = 0;
                 int numTotalAlive = 0;
                 int numTotalJackalTeam = 0;
+                int numTotalMetamorphoseTeam = 0;
                 int numTotalEgoist = 0;
 
                 for (int i = 0; i < GameData.Instance.PlayerCount; i++)
@@ -1187,6 +1216,10 @@ namespace SuperNewRoles.EndGame
                             else if (playerInfo.Object.isImpostor())
                             {
                                 numImpostorsAlive++;
+                            }
+                            else if (playerInfo.Object.isRole(RoleId.Metamorphose))
+                            {
+                                numTotalMetamorphoseTeam++;
                             }
                             else if (!playerInfo.Object.isCrew())
                             {
@@ -1209,6 +1242,7 @@ namespace SuperNewRoles.EndGame
                 CrewAlive = numCrewAlive;
                 TeamJackalAlive = numTotalJackalTeam;
                 EgoistAlive = numTotalEgoist;
+                TeamMetamorphoseAlive = numTotalMetamorphoseTeam;
             }
         }
     }
