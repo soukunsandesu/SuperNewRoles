@@ -1607,9 +1607,9 @@ namespace SuperNewRoles
                     return CustomRPC.RoleId.Chief;
                 }
                 else if (Roles.RoleClass.Metamorphose.MetamorphosePlayer.IsCheckListPlayerControl(player))
-            {
-                return CustomRPC.RoleId.Metamorphose;
-            }
+                {
+                    return CustomRPC.RoleId.Metamorphose;
+                }
             //ロールチェック
             }
             catch (Exception e)

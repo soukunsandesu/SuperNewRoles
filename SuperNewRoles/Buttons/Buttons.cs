@@ -1152,7 +1152,7 @@ namespace SuperNewRoles.Buttons
                 () =>
                 {
                     var target = setTarget();
-                    if (!target && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove && !RoleClass.Metamorphose.IsCreateMetamorphose)
+                    if (!target.Data.Role.IsImpostor && target && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove && !RoleClass.Metamorphose.IsCreateMetamorphose)
                     {
                         target.RpcSetRole(RoleTypes.Crewmate);
                         target.setRoleRPC(RoleId.Metamorphose);

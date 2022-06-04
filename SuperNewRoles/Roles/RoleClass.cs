@@ -1996,7 +1996,6 @@ namespace SuperNewRoles.Roles
             public static bool IsUseVent;
             public static bool IsImpostorLight;
             public static bool IsCreateMetamorphose;
-            public static List<int> CreatePlayers;
             private static Sprite buttonSprite;
             public static Sprite getButtonSprite()
             {
@@ -2010,7 +2009,6 @@ namespace SuperNewRoles.Roles
                 IsUseVent = CustomOptions.MetamorphoseIsUseVent.getBool();
                 IsImpostorLight = CustomOptions.MetamorphoseIsImpostorLight.getBool();
                 IsCreateMetamorphose = false;
-                CreatePlayers = new List<int>();
             }
         }
         //新ロールクラス
