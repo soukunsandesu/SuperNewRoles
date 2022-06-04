@@ -625,3 +625,5 @@ ArsonistIgniteButtonName
 ArsonistDescription
 ChiefName
 ChiefTitle1
+MetamorphoseName
+MetamorphoseTitle1
