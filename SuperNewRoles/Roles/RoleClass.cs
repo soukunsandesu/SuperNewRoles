@@ -1997,6 +1997,13 @@ namespace SuperNewRoles.Roles
             public static bool IsImpostorLight;
             public static bool IsCreateMetamorphose;
             public static List<int> CreatePlayers;
+            private static Sprite buttonSprite;
+            public static Sprite getButtonSprite()
+            {
+                if (buttonSprite) return buttonSprite;
+                buttonSprite = ModHelpers.loadSpriteFromResources("SuperNewRoles.Resources.MetamorphoseSidekickButton.png", 115f);
+                return buttonSprite;
+            }
             public static void ClearAndReload()
             {
                 MetamorphosePlayer = new List<PlayerControl>();

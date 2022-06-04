@@ -51,6 +51,7 @@ namespace SuperNewRoles.Buttons
         public static CustomButton SpeederButton;
         public static CustomButton ChiefSidekickButton;
         public static CustomButton VultureButton;
+        public static CustomButton MetamorphoseSidekickButton;
 
 
         public static TMPro.TMP_Text sheriffNumShotsText;
@@ -1146,6 +1147,34 @@ namespace SuperNewRoles.Buttons
 
             VultureButton.buttonText = ModTranslation.getString("VultureButtonName");
             VultureButton.showButtonText = true;
+
+            MetamorphoseSidekickButton = new CustomButton(
+                () =>
+                {
+                    var target = setTarget();
+                    if (!target && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove && !RoleClass.Metamorphose.IsCreateMetamorphose)
+                    {
+                        target.RpcSetRole(RoleTypes.Crewmate);
+                        target.setRoleRPC(RoleId.Metamorphose);
+                        RoleClass.Metamorphose.IsCreateMetamorphose = true;
+                    }
+                },
+                () => { return RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.isRole(RoleId.Metamorphose) && ModeHandler.isMode(ModeId.Default) && !RoleClass.Metamorphose.IsCreateMetamorphose; },
+                () =>
+                {
+                    return setTarget() && PlayerControl.LocalPlayer.CanMove;
+                },
+                () => { },
+                RoleClass.Metamorphose.getButtonSprite(),
+                new Vector3(-1.8f, -0.06f, 0),
+                __instance,
+                __instance.AbilityButton,
+                KeyCode.F,
+                49
+            );
+
+            MetamorphoseSidekickButton.buttonText = ModTranslation.getString("SidekickName");
+            MetamorphoseSidekickButton.showButtonText = true;
 
             setCustomButtonCooldowns();
 
