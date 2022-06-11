@@ -142,6 +142,7 @@ namespace SuperNewRoles.Roles
             VentMaker.ClearAndReload();
             GhostMechanic.ClearAndReload();
             EvilHacker.ClearAndReload();
+            Neta.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -2187,6 +2188,16 @@ namespace SuperNewRoles.Roles
             {
                 EvilHackerPlayer = new List<PlayerControl>();
                 IsCreateMadmate = CustomOptions.EvilHackerMadmateSetting.getBool();
+            }
+        }
+        public static class Neta
+        {
+            public static List<PlayerControl> NetaPlayer;
+            public static Color32 color = ImpostorRed;
+            public static void ClearAndReload()
+            {
+                NetaPlayer = new List<PlayerControl>();
+                //くりあぁあんどりろぉどぉ
             }
         }
         //新ロールクラス
