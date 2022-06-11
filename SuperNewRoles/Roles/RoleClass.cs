@@ -143,6 +143,7 @@ namespace SuperNewRoles.Roles
             GhostMechanic.ClearAndReload();
             EvilHacker.ClearAndReload();
             HauntedWolf.ClearAndReload();
+            Neta.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -2197,6 +2198,16 @@ namespace SuperNewRoles.Roles
             public static void ClearAndReload()
             {
                 HauntedWolfPlayer = new List<PlayerControl>();
+            }
+        }
+        public static class Neta
+        {
+            public static List<PlayerControl> NetaPlayer;
+            public static Color32 color = ImpostorRed;
+            public static void ClearAndReload()
+            {
+                NetaPlayer = new List<PlayerControl>();
+                //くりあぁあんどりろぉどぉ
             }
         }
         //新ロールクラス
