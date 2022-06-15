@@ -586,6 +586,12 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption EvilHackerPlayerCount;
         public static CustomOption EvilHackerMadmateSetting;
 
+        public static CustomRoleOption EliminatorOption;
+        public static CustomOption EliminatorPlayerCount;
+        public static CustomOption EliminatorKillCoolTime;
+        public static CustomOption EliminatorCoolTime;
+        public static CustomOption EliminatorDurationTime;
+
         public static CustomOption QuarreledOption;
         public static CustomOption QuarreledTeamCount;
         public static CustomOption QuarreledOnlyCrewMate;
@@ -1199,6 +1205,12 @@ namespace SuperNewRoles.CustomOption
 
             HauntedWolfOption = new CustomRoleOption(550, true, CustomOptionType.Crewmate, "HauntedWolfName", RoleClass.HauntedWolf.color, 1);
             HauntedWolfPlayerCount = CustomOption.Create(551, true, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], HauntedWolfOption);
+
+            EliminatorOption = new CustomRoleOption(552, false, CustomOptionType.Crewmate, "EliminatorName", RoleClass.Eliminator.color, 1);
+            EliminatorPlayerCount = CustomOption.Create(553, false, CustomOptionType.Crewmate, "SettingPlayerCountName", CrewPlayers[0], CrewPlayers[1], CrewPlayers[2], CrewPlayers[3], EliminatorOption);
+            EliminatorKillCoolTime = CustomOption.Create(554, false, CustomOptionType.Crewmate, "EliminatorCoolDownSetting", 30f, 2.5f, 60f, 2.5f, EliminatorOption, format: "unitSeconds");
+            EliminatorCoolTime = CustomOption.Create(555, false, CustomOptionType.Crewmate, "NiceScientistCoolDownSetting", 30f, 2.5f, 60f, 2.5f, EliminatorOption, format: "unitSeconds");
+            EliminatorDurationTime = CustomOption.Create(556, false, CustomOptionType.Crewmate, "NiceScientistDurationSetting", 10f, 2.5f, 20f, 2.5f, EliminatorOption, format: "unitSeconds");
             //表示設定
 
             QuarreledOption = CustomOption.Create(122, true, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);

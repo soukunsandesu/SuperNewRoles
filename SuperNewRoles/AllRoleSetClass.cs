@@ -964,6 +964,8 @@ namespace SuperNewRoles
                     return CustomOption.CustomOptions.EvilHackerPlayerCount.getFloat();
                 case (RoleId.HauntedWolf):
                     return CustomOption.CustomOptions.HauntedWolfPlayerCount.getFloat();
+                    case (RoleId.Eliminator):
+                    return CustomOption.CustomOptions.EliminatorPlayerCount.getFloat();
                     //プレイヤーカウント
             }
             return 1;
@@ -1055,6 +1057,22 @@ namespace SuperNewRoles
                     for (int i = 1; i <= Assassinselection; i++)
                     {
                         Imponotonepar.Add(RoleId.Assassin);
+                    }
+                }
+            }
+        if (!(CustomOption.CustomOptions.EliminatorOption.getString().Replace("0%", "") == ""))
+            {
+                int OptionDate = int.Parse(CustomOption.CustomOptions.EliminatorOption.getString().Replace("0%", ""));
+                RoleId ThisRoleId = RoleId.Eliminator;
+                if (OptionDate == 10)
+                {
+                    Crewonepar.Add(ThisRoleId);
+                }
+                else
+                {
+                    for (int i = 1; i <= OptionDate; i++)
+                    {
+                        Crewnotonepar.Add(ThisRoleId);
                     }
                 }
             }

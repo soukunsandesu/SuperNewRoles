@@ -145,6 +145,7 @@ namespace SuperNewRoles.Roles
             GhostMechanic.ClearAndReload();
             EvilHacker.ClearAndReload();
             HauntedWolf.ClearAndReload();
+            Eliminator.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -2200,6 +2201,33 @@ namespace SuperNewRoles.Roles
             {
                 HauntedWolfPlayer = new List<PlayerControl>();
             }
+        }
+        public static class Eliminator
+        {
+            public static List<PlayerControl> EliminatorPlayer;
+            public static Color32 color = new Color32(255, 255, 0, byte.MaxValue);
+            public static PlayerControl currentTarget;
+            public static float KillCoolTime;
+            public static DateTime ButtonTimer;
+            public static float CoolTime;
+            public static float DurationTime;
+            private static Sprite buttonSprite;
+
+            public static Sprite getButtonSprite()
+            {
+                if (buttonSprite) return buttonSprite;
+                buttonSprite = ModHelpers.loadSpriteFromResources("SuperNewRoles.Resources.JackalKillButton.png", 115f);
+                return buttonSprite;
+            }
+
+            public static void ClearAndReload()
+            {
+                EliminatorPlayer = new List<PlayerControl>();
+                KillCoolTime = CustomOptions.EliminatorKillCoolTime.getFloat();
+                CoolTime = CustomOptions.EliminatorCoolTime.getFloat();
+                DurationTime = CustomOptions.EliminatorDurationTime.getFloat();
+            }
+
         }
         //新ロールクラス
         public static class Quarreled
