@@ -62,6 +62,7 @@ namespace SuperNewRoles.Buttons
         public static CustomButton GhostMechanicRepairButton;
         public static CustomButton EvilHackerButton;
         public static CustomButton EvilHackerMadmateSetting;
+        public static CustomButton EliminatorKillButton;
 
         public static TMPro.TMP_Text sheriffNumShotsText;
         public static TMPro.TMP_Text CleanerNumCleanText;
@@ -221,7 +222,7 @@ namespace SuperNewRoles.Buttons
                     ScientistButton.actionButton.cooldownTimerText.color = new Color(0F, 0.8F, 0F);
                     Scientist.Start();
                 },
-                () => { return RoleHelpers.isAlive(PlayerControl.LocalPlayer) && (PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.NiceScientist) || PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.EvilScientist)); },
+                () => { return RoleHelpers.isAlive(PlayerControl.LocalPlayer) && (PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.NiceScientist) || PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.EvilScientist)|| PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.Eliminator)); },
                 () =>
                 {
                     return PlayerControl.LocalPlayer.CanMove;
@@ -1536,6 +1537,36 @@ namespace SuperNewRoles.Buttons
 
             EvilHackerMadmateSetting.buttonText = ModTranslation.getString("SidekickName");
             EvilHackerMadmateSetting.showButtonText = true;
+
+            EliminatorKillButton = new CustomButton(
+                () =>
+                {
+                    if (Eliminator.EliminatorFixedPatch.EliminatorsetTarget() && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove)
+                    {
+                        ModHelpers.checkMuderAttemptAndKill(PlayerControl.LocalPlayer, Eliminator.EliminatorFixedPatch.EliminatorsetTarget());
+                        Eliminator.resetCoolDown();
+                    }
+                },
+                () => { return ModeHandler.isMode(ModeId.Default) && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && RoleClass.Eliminator.EliminatorPlayer.IsCheckListPlayerControl(PlayerControl.LocalPlayer) ; },
+                () =>
+                {
+                    return Eliminator.EliminatorFixedPatch.EliminatorsetTarget() && PlayerControl.LocalPlayer.CanMove;
+                },
+                () =>
+                {
+                    if (PlayerControl.LocalPlayer.isRole(RoleId.Eliminator)) { Jackal.EndMeeting(); }
+                },
+
+                __instance.KillButton.graphic.sprite,
+                new Vector3(0, 1, 0),
+                __instance,
+                __instance.KillButton,
+                KeyCode.Q,
+                8
+            );
+
+            EliminatorKillButton.buttonText = FastDestroyableSingleton<HudManager>.Instance.KillButton.buttonLabelText.text;
+            EliminatorKillButton.showButtonText = true;
 
             setCustomButtonCooldowns();
 

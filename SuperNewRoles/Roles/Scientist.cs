@@ -20,12 +20,17 @@ namespace SuperNewRoles.Roles
         public static void ResetCoolDown()
         {
             float CoolTime;
-            if (PlayerControl.LocalPlayer.isImpostor())
+            if (PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.EvilScientist))
             {
                 CoolTime = RoleClass.EvilScientist.CoolTime;
-            } else
+            } 
+            else if (PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.NiceScientist))
             {
                 CoolTime = RoleClass.NiceScientist.CoolTime;
+            }
+            else
+            {
+                CoolTime = RoleClass.Eliminator.CoolTime;
             }
             HudManagerStartPatch.ScientistButton.MaxTimer = CoolTime;
             RoleClass.NiceScientist.ButtonTimer = DateTime.Now;
@@ -92,7 +97,7 @@ namespace SuperNewRoles.Roles
             {
                 if (AmongUsClient.Instance.GameState != AmongUsClient.GameStates.Started) return;
                 if (!ModeHandler.isMode(ModeId.Default)) return;
-                if (__instance.myPlayer.isRole(CustomRPC.RoleId.EvilScientist) || __instance.myPlayer.isRole(CustomRPC.RoleId.NiceScientist))
+                if (__instance.myPlayer.isRole(CustomRPC.RoleId.EvilScientist) || __instance.myPlayer.isRole(CustomRPC.RoleId.NiceScientist) || __instance.myPlayer.isRole(CustomRPC.RoleId.Eliminator))
                 {
                     var Scientist = __instance.myPlayer;
                     if (Scientist == null || Scientist.isDead()) return;
