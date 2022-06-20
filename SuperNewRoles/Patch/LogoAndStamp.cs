@@ -202,7 +202,7 @@ namespace SuperNewRoles.Patches
             }
             static bool Downloaded = false;
             public static MainMenuManager instance;
-            public static void Postfix(MainMenuManager __instance)
+            /*public static void Postfix(MainMenuManager __instance)
             {
                 DownLoadCustomhat.Load();
                 DownLoadClass.Load();
@@ -264,7 +264,7 @@ namespace SuperNewRoles.Patches
                     DownloadSubmarged();
                     button.SetActive(false);
                 }
-            }
+            }*/
 
             private static IEnumerator Download()
             {
@@ -299,7 +299,7 @@ namespace SuperNewRoles.Patches
             }
 
             private static Task DownloadTask = null;
-            public static async Task<bool> DownloadSubmarged()
+            /*public static async Task<bool> DownloadSubmarged()
             {
                 try
                 {
@@ -370,7 +370,7 @@ namespace SuperNewRoles.Patches
                 {
                     popup.TextAreaTMP.text = message;
                 }
-            }
+            }*/
         }
     }
 }

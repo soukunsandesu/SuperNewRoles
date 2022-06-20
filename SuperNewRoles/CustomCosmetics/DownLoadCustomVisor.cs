@@ -36,14 +36,14 @@ namespace SuperNewRoles.CustomCosmetics
         {
             if (running)
                 return;
-            IsEndDownload = false;
+            /*IsEndDownload = false;
             Directory.CreateDirectory(Path.GetDirectoryName(Application.dataPath) + @"\SuperNewRoles\");
             Directory.CreateDirectory(Path.GetDirectoryName(Application.dataPath) + @"\SuperNewRoles\CustomVisorsChache\");
             SuperNewRolesPlugin.Logger.LogInfo("[CustomVisor:Download] バイザーダウンロード開始");
             FetchHats("https://raw.githubusercontent.com/ykundesu/SuperNewNamePlates/main");
-            FetchHats("https://raw.githubusercontent.com/hinakkyu/TheOtherHats/master");
+            //FetchHats("https://raw.githubusercontent.com/hinakkyu/TheOtherHats/master");
             FetchHats("https://raw.githubusercontent.com/Ujet222/TOPVisors/main", true);
-            running = true;
+            running = true;*/
         }
         private static string sanitizeResourcePath(string res)
         {
