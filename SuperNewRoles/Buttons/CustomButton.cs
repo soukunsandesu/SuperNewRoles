@@ -182,7 +182,7 @@ namespace SuperNewRoles.Buttons
         }
     }
 
-    [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
+    //[HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     class HudManagerUpdatePatch
     {
         static void Postfix(HudManager __instance)

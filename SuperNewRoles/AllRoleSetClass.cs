@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using Hazel;
@@ -92,7 +92,7 @@ namespace SuperNewRoles
             {
                 IsNotDesync = false;
             }
-            */
+            
             if (ModeHandler.isMode(ModeId.SuperHostRoles))
             {
                 List<PlayerControl> SelectPlayers = new();
@@ -187,7 +187,7 @@ namespace SuperNewRoles
                 {
                     p.RpcSetRole(p.Data.Role.Role);
                 }
-                /*AmongUsClient.Instance.StartCoroutine(nameof(SetServerRole));*/
+                /*AmongUsClient.Instance.StartCoroutine(nameof(SetServerRole));
             }
             if (!ModeHandler.isMode(ModeId.SuperHostRoles))
             {
@@ -930,3 +930,4 @@ namespace SuperNewRoles
         }
     }
 }
+*/

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,7 @@ namespace SuperNewRoles.CustomCosmetics
                                                                     8, 32, 1, 21, 31,
                                                                     10, 34, 12, 14, 28,
                                                                     22, 29, 11, 26, 2,
-                                                                    20, 24, 9, 16, 6 }; */
+                                                                    20, 24, 9, 16, 6 }; 
         public static void Load()
         {
             List<StringNames> longlist = Enumerable.ToList<StringNames>(Palette.ColorNames);
@@ -32,7 +32,7 @@ namespace SuperNewRoles.CustomCosmetics
             List<CustomColor> colors = new()
             {
 
-                /* Custom Colors */
+                /* Custom Colors 
                 new CustomColor
                 {
                     longname = "colorSalmon",
@@ -362,9 +362,9 @@ namespace SuperNewRoles.CustomCosmetics
                 }
             };
             pickableColors += (uint)colors.Count; // Colors to show in Tab
-            /** Hidden Colors **/
+            /** Hidden Colors *
 
-            /** Add Colors **/
+            /** Add Colors *
             int id = 50000;
             foreach (CustomColor cc in colors)
             {
@@ -389,13 +389,13 @@ namespace SuperNewRoles.CustomCosmetics
             public bool isLighterColor;
         }
 
-        [HarmonyPatch]
+        //[HarmonyPatch]
         public static class CustomColorPatches
         {
-            [HarmonyPatch(typeof(TranslationController), nameof(TranslationController.GetString), new[] {
-                typeof(StringNames),
-                typeof(Il2CppReferenceArray<Il2CppSystem.Object>)
-            })]
+            //[HarmonyPatch(typeof(TranslationController), nameof(TranslationController.GetString), new[] {
+            //    typeof(StringNames),
+            //    typeof(Il2CppReferenceArray<Il2CppSystem.Object>)
+            //})]
             private class ColorStringPatch
             {
                 public static bool Prefix(ref string __result, [HarmonyArgument(0)] StringNames name)
@@ -412,7 +412,7 @@ namespace SuperNewRoles.CustomCosmetics
                     return true;
                 }
             }
-            [HarmonyPatch(typeof(PlayerTab), nameof(PlayerTab.OnEnable))]
+            ////[HarmonyPatch(typeof(PlayerTab), nameof(PlayerTab.OnEnable))]
             private static class PlayerTabEnablePatch
             {
                 public static void Postfix(PlayerTab __instance)
@@ -481,3 +481,4 @@ namespace SuperNewRoles.CustomCosmetics
         }
     }
 }
+*/
