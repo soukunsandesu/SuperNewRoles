@@ -17,6 +17,7 @@ namespace SuperNewRoles.CustomCosmetics
     public class CustomVisor
     {
         public static bool isAdded = false;
+        /*
         [HarmonyPatch(typeof(HatManager), nameof(HatManager.GetVisorById))]
         class UnlockedVisorPatch
         {
@@ -65,6 +66,6 @@ namespace SuperNewRoles.CustomCosmetics
                 }
                 SuperNewRolesPlugin.Logger.LogInfo("[CustomVisor] バイザー読み込み処理終了");
             }
-        }
+        }*/
     }
 }

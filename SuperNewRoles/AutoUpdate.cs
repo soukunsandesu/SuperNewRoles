@@ -10,7 +10,7 @@ using Twitch;
 namespace SuperNewRoles
 {
     public class AutoUpdate
-    {
+    {/*
         [HarmonyPatch(typeof(AnnouncementPopUp), nameof(AnnouncementPopUp.UpdateAnnounceText))]
         public static class Announcement
         {
@@ -20,7 +20,7 @@ namespace SuperNewRoles
                 text.text = announcement;
                 return false;
             }
-        }
+        }*/
         public static string announcement;
         public static GenericPopup InfoPopup;
         private static bool IsLoad = false;

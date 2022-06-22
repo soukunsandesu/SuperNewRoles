@@ -13,7 +13,7 @@ namespace SuperNewRoles.CustomCosmetics.ShareCosmetics
         public static Dictionary<int, string> PlayerUrl;
         public static Dictionary<int, string> PlayerDatas;
         public static Dictionary<int, CosmeticsObject> PlayerObjects;
-        [HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.OnPlayerJoined))]
+        //[HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.OnPlayerJoined))]
         public class AmongUsClientOnPlayerJoinedPatch
         {
             public static void Postfix()
@@ -32,7 +32,7 @@ namespace SuperNewRoles.CustomCosmetics.ShareCosmetics
                 }
             }
         }
-        [HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Update))]
+        //[HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Update))]
         public class GameStartManagerUpdatePatch
         {
             public static int Proce;
@@ -67,7 +67,7 @@ namespace SuperNewRoles.CustomCosmetics.ShareCosmetics
                 **/
             }
         }
-        [HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Start))]
+        //[HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.Start))]
         public class GameStartManagerStartPatch
         {
             public static void Postfix()

@@ -10,7 +10,6 @@ using UnityEngine;
 
 namespace SuperNewRoles.Patch
 {
-    [Harmony]
     public class VitalsPatch
     {
         static float vitalsTimer = MapOptions.MapOption.CanUseVitalTime.getFloat();
@@ -49,7 +48,7 @@ namespace SuperNewRoles.Patch
             vitalsTimer = 0f;
         }
 
-        [HarmonyPatch(typeof(VitalsMinigame), nameof(VitalsMinigame.Begin))]
+        ////[HarmonyPatch(typeof(VitalsMinigame), nameof(VitalsMinigame.Begin))]
         class VitalsMinigameStartPatch
         {
             static void Postfix(VitalsMinigame __instance)
@@ -58,7 +57,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch(typeof(VitalsMinigame), nameof(VitalsMinigame.Update))]
+        //[HarmonyPatch(typeof(VitalsMinigame), nameof(VitalsMinigame.Update))]
         class VitalsMinigameUpdatePatch
         {
             static bool Prefix(VitalsMinigame __instance)
@@ -98,7 +97,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch]
+        //[HarmonyPatch]
         class VitalsMinigameClosePatch
         {
             private static IEnumerable<MethodBase> TargetMethods()

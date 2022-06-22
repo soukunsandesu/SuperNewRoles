@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace SuperNewRoles.Patch
 {
-    [Harmony]
+    
     public class CustomOverlays
     {
         public static Sprite helpButton;

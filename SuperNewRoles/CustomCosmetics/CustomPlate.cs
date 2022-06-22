@@ -17,6 +17,7 @@ namespace SuperNewRoles.CustomCosmetics
     public class CustomPlate
     {
         public static bool isAdded = false;
+        /*
         [HarmonyPatch(typeof(HatManager), nameof(HatManager.GetNamePlateById))]
         class UnlockedNamePlatesPatch
         {
@@ -65,6 +66,6 @@ namespace SuperNewRoles.CustomCosmetics
 
                 //__instance.allNamePlates = AllPlates;
             }
-        }
+        }*/
     }
 }

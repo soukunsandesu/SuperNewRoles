@@ -13,7 +13,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace SuperNewRoles.MapOptions
 {
-    [HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.Awake))]
+    //[HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.Awake))]
     public class AddVitals
     {
         public static void Postfix()
@@ -26,8 +26,11 @@ namespace SuperNewRoles.MapOptions
         }
         public static GameObject PolusObject => Polus.gameObject;
         public static ShipStatus Polus;
+        static bool IsStarted = false;
         public static IEnumerator LoadPolus()
         {
+            if (IsStarted) yield break;
+            IsStarted = true;
             while ((UnityEngine.Object)(object)AmongUsClient.Instance == null)
             {
                 yield return null;
@@ -40,7 +43,7 @@ namespace SuperNewRoles.MapOptions
             Polus = polusAsset.Result.GetComponent<ShipStatus>();
         }
     }
-    [HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.Awake))]
+    //[HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.Awake))]
     public static class AmongUsClient_Awake_Patch
     {
         [HarmonyPrefix]

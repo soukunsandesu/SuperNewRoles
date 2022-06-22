@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace SuperNewRoles.Patch
 {
-    [Harmony]
+    
     public class AdminPatch
     {
         public static float RestrictAdminTime;
@@ -62,7 +62,7 @@ namespace SuperNewRoles.Patch
             adminTimer = 0f;
         }
 
-        [HarmonyPatch(typeof(MapConsole), nameof(MapConsole.CanUse))]
+        ////[HarmonyPatch(typeof(MapConsole), nameof(MapConsole.CanUse))]
         public static class MapConsoleCanUsePatch
         {
             public static bool Prefix(ref float __result, MapConsole __instance, [HarmonyArgument(0)] GameData.PlayerInfo pc, [HarmonyArgument(1)] out bool canUse, [HarmonyArgument(2)] out bool couldUse)
@@ -72,7 +72,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch(typeof(MapConsole), nameof(MapConsole.Use))]
+        ////[HarmonyPatch(typeof(MapConsole), nameof(MapConsole.Use))]
         public static class MapConsoleUsePatch
         {
             public static bool Prefix(MapConsole __instance)
@@ -81,7 +81,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.OnEnable))]
+        //[HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.OnEnable))]
         class MapCountOverlayOnEnablePatch
         {
             static void Prefix(MapCountOverlay __instance)
@@ -90,7 +90,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.OnDisable))]
+        //[HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.OnDisable))]
         class MapCountOverlayOnDisablePatch
         {
             static void Prefix(MapCountOverlay __instance)
@@ -99,7 +99,7 @@ namespace SuperNewRoles.Patch
             }
         }
 
-        [HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.Update))]
+        //[HarmonyPatch(typeof(MapCountOverlay), nameof(MapCountOverlay.Update))]
         class MapCountOverlayUpdatePatch
         {
             static bool Prefix(MapCountOverlay __instance)

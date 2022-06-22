@@ -8,7 +8,7 @@ namespace SuperNewRoles.Roles
 {
     class Doctor
     {
-        [Harmony]
+        
         public class VitalsPatch
         {
             static float vitalsTimer = 0f;

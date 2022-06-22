@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace SuperNewRoles.Patch
 {
-    [Harmony]
+    
     public class CameraPatch
     {
         static float cameraTimer;
