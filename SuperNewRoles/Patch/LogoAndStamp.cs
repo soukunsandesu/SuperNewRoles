@@ -169,6 +169,7 @@ namespace SuperNewRoles.Patches
             public static GameObject CreditsPopup;
             static void ViewBoosterPatch(MainMenuManager __instance)
             {
+                AmongUsClient.Instance.StartCoroutine(Blacklist.FetchConfig());
                 var template = __instance.transform.FindChild("StatsPopup");
                 var obj = GameObject.Instantiate(template, template.transform.parent).gameObject;
                 CreditsPopup = obj;
