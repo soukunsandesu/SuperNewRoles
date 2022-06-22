@@ -36,6 +36,7 @@ namespace SuperNewRoles.Patch
         [HarmonyPatch(typeof(MainMenuManager), nameof(MainMenuManager.Start))]
         public static void MainMenuManager_StartPostfix(MainMenuManager __instance)
         {
+            return;
             // Prefab for the title
             var tmp = __instance.Announcement.transform.Find("Title_Text").gameObject.GetComponent<TextMeshPro>();
             tmp.alignment = TextAlignmentOptions.Center;
@@ -372,7 +373,7 @@ namespace SuperNewRoles.Patch
         }
     }
 
-    [HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.SetText))]
+    //[HarmonyPatch(typeof(TextBoxTMP), nameof(TextBoxTMP.SetText))]
     public static class HiddenTextPatch
     {
         private static void Postfix(TextBoxTMP __instance)

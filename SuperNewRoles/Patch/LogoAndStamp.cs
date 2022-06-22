@@ -26,7 +26,7 @@ namespace SuperNewRoles.Patches
         public static string baseCredentials = $@"<size=130%><color=#ffa500>Super</color><color=#ff0000>New</color><color=#00ff00>Roles</color></size> v{SuperNewRolesPlugin.Version}";
 
         private static Task<bool> kari;
-
+        
         [HarmonyPatch(typeof(VersionShower), nameof(VersionShower.Start))]
         private static class VersionShowerPatch
         {
@@ -54,7 +54,7 @@ namespace SuperNewRoles.Patches
                 version.transform.SetParent(amongUsLogo.transform);
             }
         }
-
+        
         [HarmonyPatch(typeof(PingTracker), nameof(PingTracker.Update))]
         private static class PingTrackerPatch
         {

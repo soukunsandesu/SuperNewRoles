@@ -16,6 +16,7 @@ namespace SuperNewRoles.Patches
 
         private static void Prefix(MainMenuManager __instance)
         {
+            return;
             // Horse mode stuff
             var horseModeSelectionBehavior = new ClientOptionsPatch.SelectionBehaviour("Enable Horse Mode", () => HorseModeOption.enableHorseMode = ConfigRoles.EnableHorseMode.Value = !ConfigRoles.EnableHorseMode.Value, ConfigRoles.EnableHorseMode.Value);
 
