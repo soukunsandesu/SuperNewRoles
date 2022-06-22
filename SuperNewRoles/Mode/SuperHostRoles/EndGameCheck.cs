@@ -11,19 +11,19 @@ using SuperNewRoles.Helpers;
 using SuperNewRoles.Patch;
 using SuperNewRoles.Roles;
 using UnityEngine;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+////using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode.SuperHostRoles
 {
     class EndGameCheck
     {
-        public static bool CheckEndGame(ShipStatus __instance, PlayerStatistics statistics)
-        {
+        public static bool CheckEndGame(ShipStatus __instance)
+        {/*
             if (CheckAndEndGameForDefaultWin(__instance, statistics)) return false;
             if (CheckAndEndGameForJackalWin(__instance, statistics)) return false;
             if (CheckAndEndGameForSabotageWin(__instance)) return false;
             if (!PlusModeHandler.isMode(PlusModeId.NotTaskWin) && CheckAndEndGameForTaskWin(__instance)) return false;
-            if (CheckAndEndGameForWorkpersonWin(__instance)) return false;
+            if (CheckAndEndGameForWorkpersonWin(__instance)) return false;*/
             return false;
         }
         public static void WinNeutral(List<PlayerControl> players)
@@ -78,7 +78,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             {
                 p.RpcSetRole(RoleTypes.GuardianAngel);
             }
-            if (OnGameEndPatch.EndData == null && (reason == GameOverReason.ImpostorByKill || reason == GameOverReason.ImpostorBySabotage || reason == GameOverReason.ImpostorByVote || reason == GameOverReason.ImpostorDisconnect))
+            //if (//OnGameEndPatch.EndData == null && (reason == GameOverReason.ImpostorByKill || reason == GameOverReason.ImpostorBySabotage || reason == GameOverReason.ImpostorByVote || reason == GameOverReason.ImpostorDisconnect))
             {
                 foreach (PlayerControl p in RoleClass.Survivor.SurvivorPlayer)
                 {
@@ -88,7 +88,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     }
                 }
             }
-            else if (OnGameEndPatch.EndData == CustomGameOverReason.JackalWin)
+            //else if (OnGameEndPatch.EndData == CustomGameOverReason.JackalWin)
             {
                 foreach (PlayerControl p in CachedPlayer.AllPlayers)
                 {
@@ -143,7 +143,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 return true;
             }
             return false;
-        }
+        }/*
         public static bool CheckAndEndGameForJackalWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamJackalAlive >= statistics.TotalAlive - statistics.TeamJackalAlive && statistics.TeamImpostorsAlive == 0)
@@ -247,7 +247,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 return true;
             }
             return false;
-        }
+        }*/
         public static bool CheckAndEndGameForWorkpersonWin(ShipStatus __instance)
         {
             foreach (PlayerControl p in RoleClass.Workperson.WorkpersonPlayer)

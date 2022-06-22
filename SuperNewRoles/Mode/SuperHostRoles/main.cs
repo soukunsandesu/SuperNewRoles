@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using SuperNewRoles.Helpers;
-using SuperNewRoles.Intro;
+//using SuperNewRoles.Intro;
 using UnityEngine;
 
 namespace SuperNewRoles.Mode.SuperHostRoles
@@ -16,7 +16,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             RealExiled = null;
             Chat.WinCond = null;
             // FixedUpdate.UpdateTime = new Dictionary<byte, float>();
-            EndGame.OnGameEndPatch.EndData = null;
+            //EndGame.OnGameEndPatch.EndData = null;
             FixedUpdate.DefaultName = new Dictionary<int, string>();
         }
         public static PlayerControl RealExiled;

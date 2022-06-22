@@ -1,5 +1,5 @@
 using BepInEx.Configuration;
-using SuperNewRoles.Patches;
+//using SuperNewRoles.Patches;
 namespace SuperNewRoles
 {
     public static class ConfigRoles
@@ -31,7 +31,7 @@ namespace SuperNewRoles
             EnableHorseMode = SuperNewRolesPlugin.Instance.Config.Bind("Custom", "EnableHorseMode", false);
             Ip = SuperNewRolesPlugin.Instance.Config.Bind("Custom", "Custom Server IP", "127.0.0.1");
             Port = SuperNewRolesPlugin.Instance.Config.Bind("Custom", "Custom Server Port", (ushort)22023);
-            IntroPatch.ShouldAlwaysHorseAround.isHorseMode = ConfigRoles.EnableHorseMode.Value;
+            //IntroPatch.ShouldAlwaysHorseAround.isHorseMode = ConfigRoles.EnableHorseMode.Value;
             //Patch.RegionMenuOpenPatch.defaultRegions = ServerManager.DefaultRegions;
             //Patch.RegionMenuOpenPatch.UpdateRegions();
         }

@@ -6,10 +6,10 @@ using SuperNewRoles.CustomOption;
 using SuperNewRoles.EndGame;
 using SuperNewRoles.Patch;
 using UnityEngine;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+////using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode
-{
+{/*
     [HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.CloseDoorsOfType))]
     class CloseDoorsPatch
     {
@@ -20,7 +20,7 @@ namespace SuperNewRoles.Mode
                 ModeHandler.isMode(ModeId.CopsRobbers)) return false;
             return true;
         }
-    }
+    }*/
     enum ModeId
     {
         No,
@@ -315,8 +315,9 @@ namespace SuperNewRoles.Mode
                 _ => false,
             };
         }
-        public static bool EndGameChecks(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool EndGameChecks(ShipStatus __instance)
         {
+            /*
             if (isMode(ModeId.HideAndSeek))
             {
                 return HideAndSeek.main.EndGameCheck(__instance, statistics);
@@ -353,6 +354,7 @@ namespace SuperNewRoles.Mode
             {
                 return CopsRobbers.main.EndGameCheck(__instance);
             }
+            */
             return false;
         }
         public static bool IsBlockVanilaRole()

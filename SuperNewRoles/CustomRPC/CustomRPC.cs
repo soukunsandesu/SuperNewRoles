@@ -11,7 +11,7 @@ using SuperNewRoles.EndGame;
 using SuperNewRoles.Helpers;
 using SuperNewRoles.Mode;
 using SuperNewRoles.Mode.SuperHostRoles;
-using SuperNewRoles.Patches;
+//using SuperNewRoles.Patches;
 using SuperNewRoles.Roles;
 using SuperNewRoles.Sabotage;
 using UnityEngine;
@@ -246,7 +246,7 @@ namespace SuperNewRoles.CustomRPC
         }
         public static void CustomEndGame(GameOverReason reason, bool showAd)
         {
-            CheckGameEndPatch.CustomEndGame(reason, showAd);
+            //CheckGameEndPatch.CustomEndGame(reason, showAd);
         }
         public static void UseStuntmanCount(byte playerid)
         {
@@ -423,7 +423,7 @@ namespace SuperNewRoles.CustomRPC
         }
         public static void SetHaison()
         {
-            EndGameManagerSetUpPatch.IsHaison = true;
+            //EndGameManagerSetUpPatch.IsHaison = true;
         }
         public static void ShareCosmetics(byte id, string url)
         {/**
@@ -733,7 +733,7 @@ namespace SuperNewRoles.CustomRPC
             PlayerControl source = ModHelpers.playerById(sourceId);
             if (source != null)
             {
-                KillAnimationCoPerformKillPatch.hideNextAnimation = false;
+                //KillAnimationCoPerformKillPatch.hideNextAnimation = false;
                 source.MurderPlayer(source);
                 FinalStatusData.FinalStatuses[source.PlayerId] = FinalStatus.SelfBomb;
             }
@@ -774,7 +774,7 @@ namespace SuperNewRoles.CustomRPC
                 player.Exiled();
                 FinalStatusData.FinalStatuses[player.PlayerId] = FinalStatus.NekomataExiled;
             }
-        }
+        }/*
         [HarmonyPatch(typeof(KillAnimation), nameof(KillAnimation.CoPerformKill))]
         class KillAnimationCoPerformKillPatch
         {
@@ -786,14 +786,14 @@ namespace SuperNewRoles.CustomRPC
                     source = target;
                 hideNextAnimation = false;
             }
-        }
+        }*/
         public static void RPCMurderPlayer(byte sourceId, byte targetId, byte showAnimation)
         {
             PlayerControl source = ModHelpers.playerById(sourceId);
             PlayerControl target = ModHelpers.playerById(targetId);
             if (source != null && target != null)
             {
-                if (showAnimation == 0) KillAnimationCoPerformKillPatch.hideNextAnimation = true;
+                //if (showAnimation == 0) //KillAnimationCoPerformKillPatch.hideNextAnimation = true;
                 source.MurderPlayer(target);
                 FinalStatusData.FinalStatuses[source.PlayerId] = FinalStatus.Kill;
             }
@@ -807,7 +807,7 @@ namespace SuperNewRoles.CustomRPC
             }
             else
             {
-                EndGame.OnGameEndPatch.WinnerPlayer = player;
+                //EndGame.OnGameEndPatch.WinnerPlayer = player;
             }
         }
         public static void TeleporterTP(byte playerid)
@@ -822,7 +822,7 @@ namespace SuperNewRoles.CustomRPC
         }
         public static void SetWinCond(byte Cond)
         {
-            OnGameEndPatch.EndData = (CustomGameOverReason)Cond;
+            //OnGameEndPatch.EndData = (CustomGameOverReason)Cond;
         }
         public static void SetSpeedDown(bool Is)
         {
@@ -926,7 +926,7 @@ namespace SuperNewRoles.CustomRPC
         public static void UseVitalTime(float time)
         {
             Patch.VitalsPatch.RestrictVitalsTime -= time;
-        }
+        }/*
         [HarmonyPatch(typeof(InnerNetClient), nameof(InnerNetClient.StartEndGame))]
         class STARTENDGAME
         {
@@ -955,7 +955,7 @@ namespace SuperNewRoles.CustomRPC
                          revisionTOR = reader.ReadByte();
                          guidTOR = reader.ReadBytes(16);
                          CustomRPC.TORVersionShare(majorTOR, minorTOR, patchTOR, revisionTOR == 0xFF ? -1 : revisionTOR, guidTOR, versionOwnerIdTOR);
-                        break;*/
+                        break;
                     case CustomRPC.ShareOptions:
                         ShareOptions((int)reader.ReadPackedUInt32(), reader);
                         break;
@@ -1156,6 +1156,6 @@ namespace SuperNewRoles.CustomRPC
                         break;
                 }
             }
-        }
+        }*/
     }
 }

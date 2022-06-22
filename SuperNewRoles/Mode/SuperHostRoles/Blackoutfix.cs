@@ -7,6 +7,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
 {
     class Blackoutfix
     {
+        /*
         [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.CheckForEndVoting))]
         public class CheckForEndVotingPatch
         {
@@ -18,7 +19,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     EndMeetingPatch();
                 }
             }
-        }
+        }*/
         public static void EndMeetingPatch()
         {
             //BotManager.Spawn("暗転対策");

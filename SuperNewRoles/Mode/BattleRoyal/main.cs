@@ -6,7 +6,7 @@ using SuperNewRoles.Helpers;
 using SuperNewRoles.Mode.SuperHostRoles;
 using SuperNewRoles.Roles;
 using UnityEngine;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+////using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode.BattleRoyal
 {
@@ -84,7 +84,7 @@ namespace SuperNewRoles.Mode.BattleRoyal
         }
         public static int AlivePlayer;
         public static int AllPlayer;
-        public static bool IsStart;
+        public static bool IsStart;/*
         [HarmonyPatch(typeof(PlayerPhysics), nameof(PlayerPhysics.CoExitVent))]
         class CoExitVentPatch
         {
@@ -183,10 +183,10 @@ namespace SuperNewRoles.Mode.BattleRoyal
                     }
                 }
             }
-        }
+        }*/
         public static List<PlayerControl> Winners;
         public static bool IsViewAlivePlayer;
-        public static bool EndGameCheck(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool EndGameCheck(ShipStatus __instance)//, PlayerStatistics statistics)
         {
             if (IsTeamBattle)
             {

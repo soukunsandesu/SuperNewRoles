@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace SuperNewRoles.Mode.HideAndSeek
 {
     class Task
-    {
+    {/*
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.MurderPlayer))]
         public static class DeadPlayerTaskPatch
         {
@@ -27,7 +27,7 @@ namespace SuperNewRoles.Mode.HideAndSeek
                     }
                 }
             }
-        }
+        }*/
         public static void TaskCountHideAndSeek(GameData __instance)
         {
             __instance.TotalTasks = 0;

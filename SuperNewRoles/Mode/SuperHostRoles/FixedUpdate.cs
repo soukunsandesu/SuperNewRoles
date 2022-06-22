@@ -5,7 +5,7 @@ using SuperNewRoles.CustomRPC;
 using SuperNewRoles.Helpers;
 using SuperNewRoles.Mode.SuperHostRoles.Roles;
 using SuperNewRoles.Patch;
-using SuperNewRoles.Patches;
+//using SuperNewRoles.Patches;
 using SuperNewRoles.Roles;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
     {
         public static Dictionary<int, string> DefaultName = new();
         private static int UpdateDate = 0;
-
+        /*
         [HarmonyPatch(typeof(HudManager), nameof(HudManager.CoShowIntro))]
         class CoShowIntroPatch
         {
@@ -29,7 +29,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     pc.PlayerControl.nameText().text = pc.PlayerControl.name;
                 }
             }
-        }
+        }*/
         public static string getDefaultName(this PlayerControl player)
         {
             var playerid = player.PlayerId;
@@ -246,7 +246,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 }
             }
 
-            var introdate = SuperNewRoles.Intro.IntroDate.GetIntroDate(player.getRole(), player);
+            //var introdate = SuperNewRoles.Intro.IntroDate.GetIntroDate(player.getRole(), player);
             string TaskText = "";
             if (!player.isClearTask())
             {
@@ -281,7 +281,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     MySuffix += ModHelpers.cs(RoleClass.Arsonist.color, " §");
                     IsArsonistVIew = true;
                 }
-                NewName = "(<size=75%>" + ModHelpers.cs(introdate.color, introdate.Name) + TaskText + "</size>)" + ModHelpers.cs(introdate.color, Name + MySuffix);
+                //NewName = "(<size=75%>" + ModHelpers.cs(introdate.color, introdate.Name) + TaskText + "</size>)" + ModHelpers.cs(introdate.color, Name + MySuffix);
             }
             else if (player.isAlive() || IsUnchecked)
             {
@@ -298,7 +298,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                         IsArsonistVIew = true;
                     }
                 }
-                NewName = "<size=75%>" + ModHelpers.cs(introdate.color, introdate.Name) + TaskText + "</size>\n" + ModHelpers.cs(introdate.color, Name + MySuffix);
+                //NewName = "<size=75%>" + ModHelpers.cs(introdate.color, introdate.Name) + TaskText + "</size>\n" + ModHelpers.cs(introdate.color, Name + MySuffix);
                 SuperNewRolesPlugin.Logger.LogInfo(NewName);
             }
             if (!player.IsMod())

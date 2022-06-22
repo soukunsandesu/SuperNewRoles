@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Hazel;
 using SuperNewRoles.CustomOption;
 using SuperNewRoles.CustomRPC;
-using SuperNewRoles.Intro;
+////using SuperNewRoles.Intro;
 using SuperNewRoles.Mode;
 using SuperNewRoles.Roles;
 using UnityEngine;
@@ -1368,7 +1368,7 @@ namespace SuperNewRoles
         }
         public static bool isGhostRole(this RoleId role)
         {
-            return IntroDate.GetIntroDate(role).IsGhostRole;
+            return false;// IntroDate.GetIntroDate(role).IsGhostRole;
         }
         public static bool isGhostRole(this PlayerControl p, RoleId role, bool IsChache = true)
         {

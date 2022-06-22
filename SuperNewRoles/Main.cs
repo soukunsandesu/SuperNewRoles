@@ -76,6 +76,7 @@ namespace SuperNewRoles
                 SuperNewRolesPlugin.Logger.LogInfo(id+":"+__result);
             }
         }*/
+        /*
         [HarmonyPatch(typeof(StatsManager), nameof(StatsManager.AmBanned), MethodType.Getter)]
         public static class AmBannedPatch
         {
@@ -122,6 +123,7 @@ namespace SuperNewRoles
                     }
                 }
             }
-        }
+        }*/
+
     }
 }

@@ -3,7 +3,7 @@ using HarmonyLib;
 using SuperNewRoles.CustomOption;
 using SuperNewRoles.CustomRPC;
 using SuperNewRoles.Helpers;
-using SuperNewRoles.Intro;
+//using SuperNewRoles.Intro;
 using SuperNewRoles.Mode;
 using SuperNewRoles.Mode.SuperHostRoles;
 using UnhollowerBaseLib;
@@ -12,6 +12,7 @@ namespace SuperNewRoles.Roles
 {
     public static class Assassin
     {
+        /*
         //元:https://github.com/yukieiji/ExtremeRoles/blob/master/ExtremeRoles/Patches/AirShipStatusPatch.cs
         [HarmonyPatch(typeof(AirshipStatus), nameof(AirshipStatus.PrespawnStep))]
         public static class AirshipStatusPrespawnStepPatch
@@ -20,7 +21,7 @@ namespace SuperNewRoles.Roles
             {
                 return RoleClass.Assassin.TriggerPlayer == null;
             }
-        }
+        }*/
         public static void AddChat(PlayerControl sourcePlayer, string chatText)
         {
             if (!ModeHandler.isMode(ModeId.SuperHostRoles)) return;
@@ -139,7 +140,7 @@ namespace SuperNewRoles.Roles
                     }, 10.5f);
                     new LateTask(() =>
                     {
-                        exile.RpcSetName($"<size=200%>{CustomOptions.cs(RoleClass.Marine.color, IntroDate.MarineIntro.NameKey + "Name")}<color=white>は誰だ？</size>");
+                        //exile.RpcSetName($"<size=200%>{CustomOptions.cs(RoleClass.Marine.color, IntroDate.MarineIntro.NameKey + "Name")}<color=white>は誰だ？</size>");
                     }, 12f);
                     new LateTask(() =>
                     {

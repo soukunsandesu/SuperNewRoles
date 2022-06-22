@@ -28,7 +28,7 @@ namespace SuperNewRoles.Roles
                             Writer.EndRPC();
                             if (AmongUsClient.Instance.AmHost)
                             {
-                                CheckGameEndPatch.CustomEndGame((GameOverReason)CustomGameOverReason.FalseChargesWin, false);
+                                //CheckGameEndPatch.CustomEndGame((GameOverReason)CustomGameOverReason.FalseChargesWin, false);
                             }
                             else
                             {

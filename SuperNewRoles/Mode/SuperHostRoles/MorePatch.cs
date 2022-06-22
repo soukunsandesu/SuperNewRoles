@@ -11,7 +11,7 @@ using UnityEngine;
 namespace SuperNewRoles.Mode.SuperHostRoles
 {
     class MorePatch
-    {
+    {/*
         [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.CompleteTask))]
         class PlayerControlCompleteTaskPatch
         {
@@ -19,7 +19,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             {
                 FixedUpdate.SetRoleName(__instance);
             }
-        }
+        }*/
 
         public static bool RepairSystem(ShipStatus __instance,
                 SystemTypes systemType,
@@ -35,12 +35,12 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             }
             if (PlayerControl.LocalPlayer.IsUseVent() && RoleHelpers.IsComms())
             {
-                if (BattleRoyal.main.VentData.ContainsKey(CachedPlayer.LocalPlayer.PlayerId))
+                //if (BattleRoyal.main.VentData.ContainsKey(CachedPlayer.LocalPlayer.PlayerId))
                 {
-                    var data = BattleRoyal.main.VentData[CachedPlayer.LocalPlayer.PlayerId];
-                    if (data != null)
+                    //var data = BattleRoyal.main.VentData[CachedPlayer.LocalPlayer.PlayerId];
+                    //if (data != null)
                     {
-                        PlayerControl.LocalPlayer.MyPhysics.RpcExitVent((int)data);
+                        //PlayerControl.LocalPlayer.MyPhysics.RpcExitVent((int)data);
                     }
                 }
             }

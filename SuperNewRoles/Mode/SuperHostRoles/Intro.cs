@@ -55,12 +55,12 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             var myrole = PlayerControl.LocalPlayer.getRole();
             if (myrole is not (CustomRPC.RoleId.DefaultRole or CustomRPC.RoleId.Bestfalsecharge))
             {
-                var date = SuperNewRoles.Intro.IntroDate.GetIntroDate(myrole);
-                __instance.YouAreText.color = date.color;
-                __instance.RoleText.text = ModTranslation.getString(date.NameKey + "Name");
-                __instance.RoleText.color = date.color;
-                __instance.RoleBlurbText.text = date.TitleDesc;
-                __instance.RoleBlurbText.color = date.color;
+                //var date = SuperNewRoles.Intro.IntroDate.GetIntroDate(myrole);
+                //__instance.YouAreText.color = date.color;
+                //__instance.RoleText.text = ModTranslation.getString(date.NameKey + "Name");
+                //__instance.RoleText.color = date.color;
+                //__instance.RoleBlurbText.text = date.TitleDesc;
+                //__instance.RoleBlurbText.color = date.color;
             }
             if (PlayerControl.LocalPlayer.IsLovers())
             {

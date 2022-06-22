@@ -7,7 +7,7 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using Hazel;
 using SuperNewRoles.CustomRPC;
-using SuperNewRoles.Intro;
+//using SuperNewRoles.Intro;
 using SuperNewRoles.Mode;
 using UnityEngine;
 using UnityEngine.Events;
@@ -223,13 +223,6 @@ namespace SuperNewRoles.CustomOption
             }
         }
 
-        public IntroDate Intro
-        {
-            get
-            {
-                return IntroDate.GetIntroDate(RoleId);
-            }
-        }
 
         public int count
         {
@@ -255,10 +248,10 @@ namespace SuperNewRoles.CustomOption
         {
             try
             {
-                this.RoleId = IntroDate.IntroDatas.FirstOrDefault((_) =>
-                {
-                    return _.NameKey + "Name" == name;
-                }).RoleId;
+                //this.RoleId = IntroDate.IntroDatas.FirstOrDefault((_) =>
+                //{
+                //    return _.NameKey + "Name" == name;
+                //}).RoleId;
             }
             catch { }
             RoleOptions.Add(this);
@@ -306,7 +299,7 @@ namespace SuperNewRoles.CustomOption
         }
 
     }
-
+    /*
     [HarmonyPatch(typeof(RoleOptionsData), nameof(RoleOptionsData.GetNumPerGame))]
     class RoleOptionsDataGetNumPerGamePatch
     {
@@ -460,7 +453,7 @@ namespace SuperNewRoles.CustomOption
                         modifierSettings.gameObject.SetActive(true);
                         modifierTabHighlight.enabled = true;
                     }
-                    */
+                    
                 }));
             }
 
@@ -1061,7 +1054,7 @@ namespace SuperNewRoles.CustomOption
         {
             if (__instance.GameSettings != null) __instance.GameSettings.fontSize = 1.2f;
         }
-    }/*
+    }
 
     [HarmonyPatch(typeof(CreateOptionsPicker), nameof(CreateOptionsPicker.))]
     public class CreateOptionsPickerPatch

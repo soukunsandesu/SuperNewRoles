@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+//using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode.RandomColor
 {
     class main
     {
-        public static bool CheckEndGame(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool CheckEndGame(ShipStatus __instance)
         {
             if (CheckAndEndGameForSabotageWin(__instance)) return false;
-            if (CheckAndEndGameForImpostorWin(__instance, statistics)) return false;
-            if (CheckAndEndGameForCrewmateWin(__instance, statistics)) return false;
+            //if (CheckAndEndGameForImpostorWin(__instance, statistics)) return false;
+            //if (CheckAndEndGameForCrewmateWin(__instance, statistics)) return false;
             if (!PlusModeHandler.isMode(PlusModeId.NotTaskWin) && CheckAndEndGameForTaskWin(__instance)) return false;
             return false;
         }
@@ -62,9 +62,9 @@ namespace SuperNewRoles.Mode.RandomColor
             return false;
         }
 
-        public static bool CheckAndEndGameForImpostorWin(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool CheckAndEndGameForImpostorWin(ShipStatus __instance)
         {
-            if (statistics.TeamImpostorsAlive >= statistics.TotalAlive - statistics.TeamImpostorsAlive && statistics.TeamJackalAlive == 0)
+            //if (statistics.TeamImpostorsAlive >= statistics.TotalAlive - statistics.TeamImpostorsAlive && statistics.TeamJackalAlive == 0)
             {
                 var endReason = TempData.LastDeathReason switch
                 {
@@ -78,9 +78,9 @@ namespace SuperNewRoles.Mode.RandomColor
             return false;
         }
 
-        public static bool CheckAndEndGameForCrewmateWin(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool CheckAndEndGameForCrewmateWin(ShipStatus __instance)
         {
-            if (statistics.CrewAlive > 0 && statistics.TeamImpostorsAlive == 0)
+            //if (statistics.CrewAlive > 0 && statistics.TeamImpostorsAlive == 0)
             {
                 CustomEndGame(__instance, GameOverReason.HumansByVote, false);
                 return true;

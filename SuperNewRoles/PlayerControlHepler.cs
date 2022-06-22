@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using InnerNet;
 using SuperNewRoles.CustomRPC;
-using SuperNewRoles.Intro;
+//using SuperNewRoles.Intro;
 using SuperNewRoles.Roles;
 using UnityEngine;
 //using static SuperNewRoles.Patch.ShareGameVersion;
@@ -44,7 +44,7 @@ namespace SuperNewRoles
         {
             if (player == null) return;
 
-            List<Intro.IntroDate> infos = new() { Intro.IntroDate.GetIntroDate(player.getRole(), player) };
+            //List<Intro.IntroDate> infos = new() { Intro.IntroDate.GetIntroDate(player.getRole(), player) };
 
             var toRemove = new List<PlayerTask>();
             var aaa = false;
@@ -58,9 +58,9 @@ namespace SuperNewRoles
                     {
                         mytxt = textTask.Text;
                     }
-                    var info = infos.FirstOrDefault(x => textTask.Text.StartsWith(ModTranslation.getString(x.NameKey + "Name")));
-                    if (info != null)
-                        infos.Remove(info); // TextTask for this RoleInfo does not have to be added, as it already exists
+                    //var info = infos.FirstOrDefault(x => textTask.Text.StartsWith(ModTranslation.getString(x.NameKey + "Name")));
+                    //if (info != null)
+                    //    infos.Remove(info); // TextTask for this RoleInfo does not have to be added, as it already exists
                     else
                         toRemove.Add(t); // TextTask does not have a corresponding RoleInfo and will hence be deleted
                 }
@@ -74,7 +74,8 @@ namespace SuperNewRoles
             }
 
             // Add TextTask for remaining RoleInfos
-            foreach (Intro.IntroDate roleInfo in infos)
+            /*
+            //foreach (Intro.IntroDate roleInfo in infos)
             {
                 var task = new GameObject("RoleTask").AddComponent<ImportantTextTask>();
                 task.transform.SetParent(player.transform, false);
@@ -86,18 +87,18 @@ namespace SuperNewRoles
                 }
                 if (!player.isGhostRole(RoleId.DefaultRole))
                 {
-                    var GhostRoleInfo = IntroDate.GetIntroDate(player.getGhostRole(), player);
-                    task.Text += "\n" + CustomOption.CustomOptions.cs(GhostRoleInfo.color, $"{ModTranslation.getString(GhostRoleInfo.NameKey + "Name")}: {GhostRoleInfo.TitleDesc}");
+                    //var GhostRoleInfo = //IntroDate.GetIntroDate(player.getGhostRole(), player);
+                    //task.Text += "\n" + CustomOption.CustomOptions.cs(GhostRoleInfo.color, $"{ModTranslation.getString(GhostRoleInfo.NameKey + "Name")}: {GhostRoleInfo.TitleDesc}");
                 }
                 /**
                 if (player.IsQuarreled())
                 {
                     task.Text += "\n" + ModHelpers.cs(RoleClass.Quarreled.color, String.Format(ModTranslation.getString("QuarreledIntro"), SetNamesClass.AllNames[PlayerControl.LocalPlayer.GetOneSideQuarreled().PlayerId]));
                 }
-                **/
+                **
 
                 player.myTasks.Insert(0, task);
-            }
+            }*/
         }
     }
 }

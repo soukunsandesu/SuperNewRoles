@@ -6,7 +6,7 @@ using SuperNewRoles.Helpers;
 using SuperNewRoles.Mode.SuperHostRoles;
 using SuperNewRoles.Patch;
 using UnityEngine;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+////using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode.Zombie
 {
@@ -67,7 +67,7 @@ namespace SuperNewRoles.Mode.Zombie
         {
             if (ZombiePlayers.Contains(player.PlayerId)) ZombiePlayers.Remove(player.PlayerId);
         }
-        public static bool EndGameCheck(ShipStatus __instance, PlayerStatistics statistics)
+        public static bool EndGameCheck(ShipStatus __instance)
         {
             bool IsZombieWin = true;
             foreach (PlayerControl p in CachedPlayer.AllPlayers)

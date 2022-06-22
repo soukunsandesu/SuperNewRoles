@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -1001,7 +1001,7 @@ namespace SuperNewRoles.EndGame
         {
             Buttons.CustomButton.MeetingEndedUpdate();
         }
-    }*/
+    }
 
     [HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.CheckEndCriteria))]
     class CheckGameEndPatch
@@ -1243,3 +1243,4 @@ namespace SuperNewRoles.EndGame
         }
     }
 }
+*/

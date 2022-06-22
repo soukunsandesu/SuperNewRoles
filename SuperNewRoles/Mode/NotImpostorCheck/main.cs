@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static SuperNewRoles.EndGame.CheckGameEndPatch;
+////using static SuperNewRoles.EndGame.CheckGameEndPatch;
 
 namespace SuperNewRoles.Mode.NotImpostorCheck
 {

@@ -3,7 +3,7 @@ using HarmonyLib;
 using UnityEngine;
 
 namespace SuperNewRoles.Roles
-{
+{/*
     [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.UpdateButtons))]
     class SoothSayer_updatepatch
     {
@@ -44,7 +44,7 @@ namespace SuperNewRoles.Roles
             }
             else
             {
-                namedate = Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
+                //amedate = //Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
             }
             var name = ModTranslation.getString(namedate + "Name");
             FastDestroyableSingleton<HudManager>.Instance.Chat.AddChat(PlayerControl.LocalPlayer, string.Format(ModTranslation.getString("SoothSayerGetChat"), Target.nameText().text, name));
@@ -85,7 +85,7 @@ namespace SuperNewRoles.Roles
         {
             var Target = ModHelpers.playerById((byte)__instance.playerStates[Index].TargetPlayerId);
             var introdate = Target.getRole();
-            namedate = Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
+            //namedate = //Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
             if (RoleClass.SpiritMedium.DisplayMode)
             {
                 if (Target.isImpostor())
@@ -107,7 +107,7 @@ namespace SuperNewRoles.Roles
             }
             else
             {
-                namedate = Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
+                //namedate = //Intro.IntroDate.GetIntroDate(introdate, Target).NameKey;
             }
             var name = ModTranslation.getString(namedate + "Name");
             FastDestroyableSingleton<HudManager>.Instance.Chat.AddChat(PlayerControl.LocalPlayer, string.Format(ModTranslation.getString("SoothSayerGetChat"), Target.nameText().text, name));
@@ -149,5 +149,5 @@ namespace SuperNewRoles.Roles
             Event(__instance);
             spiritEvent(__instance);
         }
-    }
+    }*/
 }

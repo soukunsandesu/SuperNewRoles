@@ -9,7 +9,6 @@ using UnityEngine;
 
 namespace SuperNewRoles.Roles
 {
-    [HarmonyPatch]
     public static class RoleClass
     {
         public static bool IsMeeting;
@@ -34,7 +33,7 @@ namespace SuperNewRoles.Roles
             Roles.MadMayor.CheckedImpostor = new();
             Roles.MadSeer.CheckedImpostor = new();
             Roles.JackalFriends.CheckedJackal = new();
-            Mode.BattleRoyal.main.VentData = new();
+            //Mode.BattleRoyal.main.VentData = new();
             EndGame.FinalStatusPatch.FinalStatusData.ClearFinalStatusData();
             Mode.ModeHandler.ClearAndReload();
             MapRemodeling.AdditionalVents.ClearAndReload();
