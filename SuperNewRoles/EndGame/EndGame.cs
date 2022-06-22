@@ -479,11 +479,11 @@ namespace SuperNewRoles.EndGame
                     //var p = pc.Data;
                     var roles = Intro.IntroDate.GetIntroDate(p.Object.getRole(), p.Object);
                     var ghostRoles = Intro.IntroDate.GetIntroDate(p.Object.getGhostRole(), p.Object);
-                    var (tasksCompleted, tasksTotal) = TaskCount.TaskDate(p);
+                    //var (tasksCompleted, tasksTotal) = TaskCount.TaskDate(p);
                     if (p.Object.isImpostor())
                     {
-                        tasksCompleted = 0;
-                        tasksTotal = 0;
+                        //tasksCompleted = 0;
+                        //tasksTotal = 0;
                     }
                     var finalStatus = FinalStatusPatch.FinalStatusData.FinalStatuses[p.PlayerId] =
                         p.Disconnected == true ? FinalStatus.Disconnected :
@@ -502,8 +502,8 @@ namespace SuperNewRoles.EndGame
                         NameSuffix = namesuffix,
                         PlayerId = p.PlayerId,
                         ColorId = p.DefaultOutfit.ColorId,
-                        TasksTotal = tasksTotal,
-                        TasksCompleted = gameOverReason == GameOverReason.HumansByTask ? tasksTotal : tasksCompleted,
+                        TasksTotal = 0,//tasksTotal,
+                        TasksCompleted = 0,//gameOverReason == GameOverReason.HumansByTask ? tasksTotal : tasksCompleted,
                         Status = finalStatus,
                         IntroDate = roles,
                         GhostIntroDate = ghostRoles
@@ -794,8 +794,8 @@ namespace SuperNewRoles.EndGame
             {
                 if (p.isAlive())
                 {
-                    var (complate, all) = TaskCount.TaskDateNoClearCheck(p.Data);
-                    if (!RoleClass.God.IsTaskEndWin || complate >= all)
+                    //var (complate, all) = TaskCount.TaskDateNoClearCheck(p.Data);
+                    //if (!RoleClass.God.IsTaskEndWin || complate >= all)
                     {
                         TempData.winners = new Il2CppSystem.Collections.Generic.List<WinningPlayerData>();
                         WinningPlayerData wpd = new(p.Data);
@@ -993,6 +993,7 @@ namespace SuperNewRoles.EndGame
         {
         }
     }
+    /*
     [HarmonyPatch(typeof(ExileController), nameof(ExileController.ReEnableGameplay))]
     class ExileControllerReEnableGameplayPatch
     {
@@ -1000,7 +1001,7 @@ namespace SuperNewRoles.EndGame
         {
             Buttons.CustomButton.MeetingEndedUpdate();
         }
-    }
+    }*/
 
     [HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.CheckEndCriteria))]
     class CheckGameEndPatch
@@ -1010,7 +1011,7 @@ namespace SuperNewRoles.EndGame
             if (!GameData.Instance) return false;
             if (DestroyableSingleton<TutorialManager>.InstanceExists) return true;
             if (!RoleManagerSelectRolesPatch.IsSetRoleRpc) return false;
-            if (Patch.DebugMode.IsDebugMode()) return false;
+            //if (Patch.DebugMode.IsDebugMode()) return false;
             if (RoleClass.Assassin.TriggerPlayer != null) return false;
             var statistics = new PlayerStatistics(__instance);
             if (!ModeHandler.isMode(ModeId.Default))
@@ -1161,8 +1162,8 @@ namespace SuperNewRoles.EndGame
                 {
                     if (p.isAlive() || !RoleClass.Workperson.IsAliveWin)
                     {
-                        var (playerCompleted, playerTotal) = TaskCount.TaskDate(p.Data);
-                        if (playerCompleted >= playerTotal)
+                        //var (playerCompleted, playerTotal) = TaskCount.TaskDate(p.Data);
+                        //if (playerCompleted >= playerTotal)
                         {
                             MessageWriter Writer = AmongUsClient.Instance.StartRpcImmediately(CachedPlayer.LocalPlayer.NetId, (byte)CustomRPC.CustomRPC.ShareWinner, Hazel.SendOption.Reliable, -1);
                             Writer.Write(p.PlayerId);

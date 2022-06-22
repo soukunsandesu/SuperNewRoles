@@ -87,7 +87,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                     PlayerControl SideLoverPlayer = exiled.Object.GetOneSideLovers();
                     if (SideLoverPlayer.isAlive())
                     {
-                        SideLoverPlayer.RpcCheckExile();
+                        //SideLoverPlayer.RpcCheckExile();
                     }
                 }
             }

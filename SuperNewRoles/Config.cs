@@ -32,8 +32,8 @@ namespace SuperNewRoles
             Ip = SuperNewRolesPlugin.Instance.Config.Bind("Custom", "Custom Server IP", "127.0.0.1");
             Port = SuperNewRolesPlugin.Instance.Config.Bind("Custom", "Custom Server Port", (ushort)22023);
             IntroPatch.ShouldAlwaysHorseAround.isHorseMode = ConfigRoles.EnableHorseMode.Value;
-            Patch.RegionMenuOpenPatch.defaultRegions = ServerManager.DefaultRegions;
-            Patch.RegionMenuOpenPatch.UpdateRegions();
+            //Patch.RegionMenuOpenPatch.defaultRegions = ServerManager.DefaultRegions;
+            //Patch.RegionMenuOpenPatch.UpdateRegions();
         }
     }
 }

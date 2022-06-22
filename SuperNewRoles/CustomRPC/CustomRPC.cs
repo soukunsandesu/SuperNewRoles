@@ -438,7 +438,7 @@ namespace SuperNewRoles.CustomRPC
         }
         public static void SetRoomTimerRPC(byte min, byte seconds)
         {
-            Patch.ShareGameVersion.timer = (min * 60) + seconds;
+            //Patch.ShareGameVersion.timer = (min * 60) + seconds;
         }
         public static void CountChangerSetRPC(byte sourceid, byte targetid)
         {
@@ -487,7 +487,7 @@ namespace SuperNewRoles.CustomRPC
                 ver = new System.Version(major, minor, build);
             else
                 ver = new System.Version(major, minor, build, revision);
-            Patch.ShareGameVersion.GameStartManagerUpdatePatch.VersionPlayers[clientId] = new Patch.PlayerVersion(ver, guid);
+            //Patch.ShareGameVersion.GameStartManagerUpdatePatch.VersionPlayers[clientId] = new Patch.PlayerVersion(ver, guid);
             //SuperNewRolesPlugin.Logger.LogInfo("PATCHES:"+ Patch.ShareGameVersion.playerVersions);
         }
         public static void SetRole(byte playerid, byte RPCRoleId)

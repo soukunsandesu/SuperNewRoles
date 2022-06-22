@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -66,7 +66,7 @@ namespace SuperNewRoles.Patches
                     __instance.text.text = $"{baseCredentials}\n{__instance.text.text}";
                     try
                     {
-                        if (DebugMode.IsDebugMode())
+                        //if (DebugMode.IsDebugMode())
                         {
                             __instance.text.text += "\n" + ModTranslation.getString("DebugModeOn");
                         }
@@ -169,7 +169,7 @@ namespace SuperNewRoles.Patches
             public static GameObject CreditsPopup;
             static void ViewBoosterPatch(MainMenuManager __instance)
             {
-                AmongUsClient.Instance.StartCoroutine(Blacklist.FetchConfig());
+                //AmongUsClient.Instance.StartCoroutine(Blacklist.FetchConfig());
                 var template = __instance.transform.FindChild("StatsPopup");
                 var obj = GameObject.Instantiate(template, template.transform.parent).gameObject;
                 CreditsPopup = obj;
@@ -231,7 +231,7 @@ namespace SuperNewRoles.Patches
                 renderer.sprite = ModHelpers.loadSpriteFromResources("SuperNewRoles.Resources.banner.png", 150f);
 
                 loadSprites();
-                renderer.sprite = HorseModeOption.enableHorseMode ? horseBannerSprite : bannerSprite;
+                //renderer.sprite = HorseModeOption.enableHorseMode ? horseBannerSprite : bannerSprite;
 
                 if (File.Exists(Assembly.GetExecutingAssembly().Location.Replace("SuperNewRoles.dll", "Submerged.dll"))) return;
                 SuperNewRolesPlugin.Logger.LogInfo("[Submerged]Passage ahhhhhh!:" + Assembly.GetExecutingAssembly().Location.Replace("SuperNewRoles.dll", "Submerged.dll"));
@@ -289,7 +289,7 @@ namespace SuperNewRoles.Patches
                         renderer.color = new Color(1, 1, 1, 1 - p);
                         if (p == 1)
                         {
-                            renderer.sprite = HorseModeOption.enableHorseMode ? horseBannerSprite : bannerSprite;
+                            //renderer.sprite = HorseModeOption.enableHorseMode ? horseBannerSprite : bannerSprite;
                             AmongUsClient.Instance.StartCoroutine(Effects.Lerp(fadeDuration, new Action<float>((p) =>
                             {
                                 renderer.color = new Color(1, 1, 1, p);
@@ -375,3 +375,4 @@ namespace SuperNewRoles.Patches
         }
     }
 }
+*/

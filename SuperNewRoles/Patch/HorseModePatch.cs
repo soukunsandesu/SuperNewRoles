@@ -1,4 +1,4 @@
-using HarmonyLib;
+/*using HarmonyLib;
 using SuperNewRoles.Patch;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,9 +16,8 @@ namespace SuperNewRoles.Patches
 
         private static void Prefix(MainMenuManager __instance)
         {
-            return;
             // Horse mode stuff
-            var horseModeSelectionBehavior = new ClientOptionsPatch.SelectionBehaviour("Enable Horse Mode", () => HorseModeOption.enableHorseMode = ConfigRoles.EnableHorseMode.Value = !ConfigRoles.EnableHorseMode.Value, ConfigRoles.EnableHorseMode.Value);
+            //var horseModeSelectionBehavior = new ClientOptionsPatch.SelectionBehaviour("Enable Horse Mode", () => HorseModeOption.enableHorseMode = ConfigRoles.EnableHorseMode.Value = !ConfigRoles.EnableHorseMode.Value, ConfigRoles.EnableHorseMode.Value);
 
             var bottomTemplate = GameObject.Find("InventoryButton");
             if (bottomTemplate == null) return;
@@ -32,7 +31,7 @@ namespace SuperNewRoles.Patches
             spriteHorseButton.sprite = horseButtonState ? horseModeOnSprite : horseModeOffSprite;
 
             passiveHorseButton.OnClick = new ButtonClickedEvent();
-
+            /*
             passiveHorseButton.OnClick.AddListener((UnityEngine.Events.UnityAction)delegate
             {
                 horseButtonState = horseModeSelectionBehavior.OnClick();
@@ -86,3 +85,4 @@ namespace SuperNewRoles.Patches
         }
     }
 }
+            */

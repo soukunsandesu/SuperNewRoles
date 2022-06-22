@@ -30,8 +30,8 @@ namespace SuperNewRoles.Roles
                 default:
                     return false;
             }
-            var taskdata = TaskCount.TaskDate(p.Data).Item1;
-            if (CheckTask <= taskdata)
+            //var taskdata = //TaskCount.TaskDate(p.Data).Item1;
+            //if (CheckTask <= taskdata)
             {
                 CheckedJackal.Add(p.PlayerId);
                 return true;

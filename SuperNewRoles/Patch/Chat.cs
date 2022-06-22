@@ -1,4 +1,4 @@
-using System.Linq;
+/*using System.Linq;
 using HarmonyLib;
 
 namespace SuperNewRoles.Patch
@@ -20,3 +20,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

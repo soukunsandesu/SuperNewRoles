@@ -33,7 +33,7 @@ namespace SuperNewRoles.Roles
                     Writer.EndRPC();
                     CustomRPC.RPCProcedure.CleanBody(CachedPlayer.LocalPlayer.PlayerId);
                     CachedPlayer.LocalPlayer.Data.IsDead = false;
-                    DeadPlayer.deadPlayers?.RemoveAll(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId);
+                    //DeadPlayer.deadPlayers?.RemoveAll(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId);
                     RoleClass.Levelinger.ThisXP -= RoleClass.Levelinger.ReviveUseXP;
                 }
             }

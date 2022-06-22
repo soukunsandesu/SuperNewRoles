@@ -10,10 +10,10 @@ namespace SuperNewRoles.Roles
         public class BaitUpdate
         {
             public static void Postfix(PlayerControl __instance)
-            {
+            {/*
                 SuperNewRolesPlugin.Logger.LogInfo(RoleClass.Bait.ReportTime);
                 RoleClass.Bait.ReportTime -= Time.fixedDeltaTime;
-                DeadPlayer deadPlayer = DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId)?.FirstOrDefault();
+                //DeadPlayer deadPlayer = null;// DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId)?.FirstOrDefault();
 
                 if (deadPlayer.killerIfExisting != null && RoleClass.Bait.ReportTime <= 0f)
                 {
@@ -26,7 +26,7 @@ namespace SuperNewRoles.Roles
                         CustomRPC.RPCProcedure.ReportDeadBody(deadPlayer.killerIfExisting.PlayerId, CachedPlayer.LocalPlayer.PlayerId);
                     }
                     RoleClass.Bait.Reported = true;
-                }
+                }*/
             }
         }
     }

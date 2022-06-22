@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -237,7 +237,7 @@ namespace SuperNewRoles.Patch
                     {
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition;
                     }
-                }**/
+                }*
         }
     }
     public class PlayerVersion
@@ -257,3 +257,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

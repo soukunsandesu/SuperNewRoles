@@ -37,9 +37,9 @@ namespace SuperNewRoles.Mode.HideAndSeek
                 GameData.PlayerInfo playerInfo = __instance.AllPlayers[i];
                 if (playerInfo.Object.isAlive() && !playerInfo.Object.isImpostor())
                 {
-                    var (playerCompleted, playerTotal) = SuperNewRoles.Patch.TaskCount.TaskDate(playerInfo);
-                    __instance.TotalTasks += playerTotal;
-                    __instance.CompletedTasks += playerCompleted;
+                    //var (playerCompleted, playerTotal) = SuperNewRoles.Patch.TaskCount.TaskDate(playerInfo);
+                    //__instance.TotalTasks += playerTotal;
+                    //__instance.CompletedTasks += playerCompleted;
                 }
             }
         }

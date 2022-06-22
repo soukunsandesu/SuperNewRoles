@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -40,7 +40,7 @@ namespace SuperNewRoles.Roles
                             // Hacker update
                             if (vitalsPanel.IsDead)
                             {
-                                DeadPlayer deadPlayer = DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == player?.PlayerId)?.FirstOrDefault();
+                                /DeadPlayer deadPlayer = DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == player?.PlayerId)?.FirstOrDefault();
                                 if (deadPlayer != null && deadPlayer.timeOfDeath != null && k < hackerTexts.Count && hackerTexts[k] != null)
                                 {
                                     float timeSinceDeath = (float)(DateTime.UtcNow - deadPlayer.timeOfDeath).TotalMilliseconds;
@@ -61,3 +61,4 @@ namespace SuperNewRoles.Roles
         }
     }
 }
+*/

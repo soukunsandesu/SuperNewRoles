@@ -15,8 +15,8 @@ namespace SuperNewRoles.Roles
             /*
             SuperNewRolesPlugin.Logger.LogInfo("�C���|�X�^�[�`�F�b�N�^�X�N��:"+RoleClass.MadJester.ImpostorCheckTask);
             SuperNewRolesPlugin.Logger.LogInfo("�I���^�X�N��:"+TaskCount.TaskDate(p.Data).Item1);*/
-            SuperNewRolesPlugin.Logger.LogInfo("�L����:" + (RoleClass.MadJester.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1));
-            if (RoleClass.MadJester.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1)
+            //SuperNewRolesPlugin.Logger.LogInfo("�L����:" + (RoleClass.MadJester.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1));
+            //if (RoleClass.MadJester.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1)
             {
                 SuperNewRolesPlugin.Logger.LogInfo("�L����Ԃ��܂���");
                 return true;

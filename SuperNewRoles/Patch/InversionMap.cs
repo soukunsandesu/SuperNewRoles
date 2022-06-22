@@ -1,4 +1,4 @@
-using HarmonyLib;
+/*using HarmonyLib;
 using SuperNewRoles.CustomOption;
 using UnityEngine;
 
@@ -50,8 +50,9 @@ namespace SuperNewRoles.Patch
                     airship = GameObject.Find("Airship(Clone)");
                     airship.transform.localScale = new Vector3(-0.7f, 0.7f, 1f);
                     airshipの選択スポーンシステムの対応ができてないため非表示
-                }*/
+                }
             }
         }
     }
 }
+*/

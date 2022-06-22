@@ -5,7 +5,7 @@ using SuperNewRoles.CustomRPC;
 using SuperNewRoles.Intro;
 using SuperNewRoles.Roles;
 using UnityEngine;
-using static SuperNewRoles.Patch.ShareGameVersion;
+//using static SuperNewRoles.Patch.ShareGameVersion;
 
 namespace SuperNewRoles
 {
@@ -24,7 +24,7 @@ namespace SuperNewRoles
         public static bool IsMod(this int player)
         {
             if (player == AmongUsClient.Instance.HostId && AmongUsClient.Instance.AmHost) return true;
-            return GameStartManagerUpdatePatch.VersionPlayers.ContainsKey(player);
+            return true; ;//GameStartManagerUpdatePatch.VersionPlayers.ContainsKey(player);
         }
         public static void clearAllTasks(this PlayerControl player)
         {

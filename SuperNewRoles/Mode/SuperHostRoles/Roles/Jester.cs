@@ -15,8 +15,8 @@ namespace SuperNewRoles.Mode.SuperHostRoles.Roles
             if (!AmongUsClient.Instance.AmHost) return;
             if (exiled.Object.isRole(CustomRPC.RoleId.Jester))
             {
-                var (complate, all) = TaskCount.TaskDateNoClearCheck(exiled);
-                if (!RoleClass.Jester.IsJesterTaskClearWin || complate >= all)
+                //var (complate, all) = TaskCount.TaskDateNoClearCheck(exiled);
+                //if (!RoleClass.Jester.IsJesterTaskClearWin || complate >= all)
                 {
                     try
                     {
@@ -48,8 +48,8 @@ namespace SuperNewRoles.Mode.SuperHostRoles.Roles
             }
             else if (exiled.Object.isRole(CustomRPC.RoleId.MadJester))
             {
-                var (complate, all) = TaskCount.TaskDateNoClearCheck(exiled);
-                if (!RoleClass.MadJester.IsMadJesterTaskClearWin || complate >= all)
+                //var (complate, all) = TaskCount.TaskDateNoClearCheck(exiled);
+                //if (!RoleClass.MadJester.IsMadJesterTaskClearWin || complate >= all)
                 {
                     try
                     {

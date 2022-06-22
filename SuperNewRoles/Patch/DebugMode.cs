@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -110,7 +110,7 @@ namespace SuperNewRoles.Patch
                             AmongUsClient.Instance.Spawn(p, p.OwnerId, SpawnFlags.IsClientCharacter);
                         }
                     }
-                    */
+                    
 
                 if (Input.GetKeyDown(KeyCode.F10))
                 {
@@ -143,3 +143,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

@@ -23,8 +23,8 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             };
 
             //死体レポートのみで起こる処理
-            DeadPlayer deadPlayer;
-            deadPlayer = DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId)?.FirstOrDefault();
+            //DeadPlayer deadPlayer;
+            //deadPlayer = DeadPlayer.deadPlayers?.Where(x => x.player?.PlayerId == CachedPlayer.LocalPlayer.PlayerId)?.FirstOrDefault();
             //if (RoleClass.Bait.ReportedPlayer.Contains(target.PlayerId)) return true;
             if (__instance.isRole(RoleId.Minimalist))
             {

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using HarmonyLib;
 using Hazel;
 using InnerNet;
@@ -163,3 +163,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

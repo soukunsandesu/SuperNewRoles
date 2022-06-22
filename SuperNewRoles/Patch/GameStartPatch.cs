@@ -15,7 +15,7 @@ using Hazel;
 using Il2CppSystem;
 using Il2CppSystem.Collections.Generic;
 using Il2CppSystem.Linq;
-using UnhollowerBaseLib;
+/*using UnhollowerBaseLib;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,3 +40,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

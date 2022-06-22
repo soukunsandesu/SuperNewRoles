@@ -18,9 +18,9 @@ namespace SuperNewRoles.Mode.Detective
                     GameData.PlayerInfo playerInfo = __instance.AllPlayers[i];
                     if (!playerInfo.Disconnected && playerInfo.Object.isCrew() && (playerInfo.Object.PlayerId != main.DetectivePlayer.PlayerId || !main.IsDetectiveNotTask))
                     {
-                        var (playerCompleted, playerTotal) = Patch.TaskCount.TaskDate(playerInfo);
-                        __instance.TotalTasks += playerTotal;
-                        __instance.CompletedTasks += playerCompleted;
+                        //var (playerCompleted, playerTotal) = Patch.TaskCount.TaskDate(playerInfo);
+                        //__instance.TotalTasks += playerTotal;
+                        //__instance.CompletedTasks += playerCompleted;
                     }
                 }
                 catch

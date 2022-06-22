@@ -254,12 +254,12 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 {
                     if (commsActive)
                     {
-                        TaskText = ModHelpers.cs(Color.yellow, "(?/" + TaskCount.TaskDateNoClearCheck(player.Data).Item2 + ")");
+                       // TaskText = ModHelpers.cs(Color.yellow, "(?/" + TaskCount.TaskDateNoClearCheck(player.Data).Item2 + ")");
                     }
                     else
                     {
-                        var (complate, all) = TaskCount.TaskDateNoClearCheck(player.Data);
-                        TaskText = ModHelpers.cs(Color.yellow, "(" + complate + "/" + all + ")");
+                        //var (complate, all) = TaskCount.TaskDateNoClearCheck(player.Data);
+                        //TaskText = ModHelpers.cs(Color.yellow, "(" + complate + "/" + all + ")");
                     }
                 }
                 catch
@@ -357,7 +357,7 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 {
                     FastDestroyableSingleton<HudManager>.Instance.KillButton.gameObject.SetActive(true);
                     CachedPlayer.LocalPlayer.Data.Role.CanUseKillButton = true;
-                    FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(PlayerControlFixedUpdatePatch.setTarget());
+                    //FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(PlayerControlFixedUpdatePatch.setTarget());
                     if (Input.GetKeyDown(KeyCode.Q))
                     {
                         FastDestroyableSingleton<HudManager>.Instance.KillButton.DoClick();
@@ -380,13 +380,13 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             {
                 FastDestroyableSingleton<HudManager>.Instance.KillButton.gameObject.SetActive(true);
                 CachedPlayer.LocalPlayer.Data.Role.CanUseKillButton = true;
-                FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(PlayerControlFixedUpdatePatch.setTarget());
+                //FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(//PlayerControlFixedUpdatePatch.setTarget());
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     FastDestroyableSingleton<HudManager>.Instance.KillButton.DoClick();
                 }
             }
-            SetNameUpdate.Postfix(PlayerControl.LocalPlayer);
+            //SetNameUpdate.Postfix(PlayerControl.LocalPlayer);
             if (!AmongUsClient.Instance.AmHost) return;
             foreach (PlayerControl p in BotManager.AllBots)
             {

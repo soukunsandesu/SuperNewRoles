@@ -7,7 +7,7 @@ namespace SuperNewRoles.Roles
     public class RedRidingHood
     {
         public static void WrapUp(GameData.PlayerInfo player)
-        {
+        {/*
             if (PlayerControl.LocalPlayer.isDead() && PlayerControl.LocalPlayer.isRole(CustomRPC.RoleId.NiceRedRidingHood))
             {
                 if (RoleClass.NiceRedRidingHood.Count >= 1)
@@ -34,7 +34,7 @@ namespace SuperNewRoles.Roles
                         }
                     }
                 }
-            }
+            }*/
         }
     }
 }

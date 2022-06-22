@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
-using SuperNewRoles.Buttons;
+//using SuperNewRoles.Buttons;
 using SuperNewRoles.CustomRPC;
 using SuperNewRoles.Intro;
 using SuperNewRoles.Mode;
@@ -306,7 +306,7 @@ namespace SuperNewRoles.Patches
             {
                 new LateTask(() =>
                 {
-                    CustomButton.MeetingEndedUpdate();
+                    //CustomButton.MeetingEndedUpdate();
                     if (ModeHandler.isMode(ModeId.Default))
                     {
                         var myrole = PlayerControl.LocalPlayer.getRole();
@@ -369,11 +369,11 @@ namespace SuperNewRoles.Patches
             public static bool isHorseMode;
             public static bool Prefix(ref bool __result)
             {
-                if (isHorseMode != HorseModeOption.enableHorseMode && LobbyBehaviour.Instance != null) __result = isHorseMode;
-                else
+                //if (isHorseMode != HorseModeOption.enableHorseMode && LobbyBehaviour.Instance != null) __result = isHorseMode;
+                //else
                 {
-                    __result = HorseModeOption.enableHorseMode;
-                    isHorseMode = HorseModeOption.enableHorseMode;
+                    //__result = HorseModeOption.enableHorseMode;
+                    //isHorseMode = HorseModeOption.enableHorseMode;
                 }
                 return false;
             }

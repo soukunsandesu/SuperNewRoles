@@ -49,8 +49,8 @@ namespace SuperNewRoles.Mode.SuperHostRoles
             {
                 if (p.isAlive())
                 {
-                    var (complate, all) = TaskCount.TaskDateNoClearCheck(p.Data);
-                    if (!RoleClass.God.IsTaskEndWin || complate >= all)
+                    //var (complate, all) = TaskCount.TaskDateNoClearCheck(p.Data);
+                    //if (!RoleClass.God.IsTaskEndWin || complate >= all)
                     {
                         if (WinGods == null)
                         {
@@ -256,8 +256,8 @@ namespace SuperNewRoles.Mode.SuperHostRoles
                 {
                     if (p.isAlive() || !RoleClass.Workperson.IsAliveWin)
                     {
-                        var (playerCompleted, playerTotal) = TaskCount.TaskDate(p.Data);
-                        if (playerCompleted >= playerTotal)
+                        //var (playerCompleted, playerTotal) = TaskCount.TaskDate(p.Data);
+                        //if (playerCompleted >= playerTotal)
                         {
                             MessageWriter Writer = AmongUsClient.Instance.StartRpcImmediately(CachedPlayer.LocalPlayer.NetId, (byte)CustomRPC.CustomRPC.ShareWinner, Hazel.SendOption.Reliable, -1);
                             Writer.Write(p.PlayerId);

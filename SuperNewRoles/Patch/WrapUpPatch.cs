@@ -1,9 +1,9 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 using Hazel;
-using SuperNewRoles.Buttons;
+//using SuperNewRoles.Buttons;
 using SuperNewRoles.CustomRPC;
 using SuperNewRoles.EndGame;
 using SuperNewRoles.Helpers;
@@ -77,7 +77,7 @@ namespace SuperNewRoles.Patch
             SerialKiller.WrapUp();
             Assassin.WrapUp(exiled);
             CountChanger.CountChangerPatch.WrapUpPatch();
-            CustomButton.MeetingEndedUpdate();
+            //CustomButton.MeetingEndedUpdate();
 
             PlayerControlHepler.refreshRoleDescription(PlayerControl.LocalPlayer);
             new LateTask(() =>
@@ -162,3 +162,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

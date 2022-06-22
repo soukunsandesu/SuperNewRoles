@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -276,7 +276,7 @@ namespace SuperNewRoles.Patches
                 {
                     showAnimation = false;
                 }
-                */
+                
 
                 // Use an unchecked kill command, to allow shorter kill cooldowns etc. without getting kicked
                 MurderAttemptResult res = ModHelpers.checkMuderAttemptAndKill(PlayerControl.LocalPlayer, __instance.currentTarget, showAnimation: showAnimation);
@@ -713,8 +713,8 @@ namespace SuperNewRoles.Patches
         {
             // SuperNewRolesPlugin.Logger.LogInfo("MurderPlayer発生！元:" + __instance.getDefaultName() + "、ターゲット:" + target.getDefaultName());
             // Collect dead player info
-            DeadPlayer deadPlayer = new(target, DateTime.UtcNow, DeathReason.Kill, __instance);
-            DeadPlayer.deadPlayers.Add(deadPlayer);
+            //DeadPlayer deadPlayer = new(target, DateTime.UtcNow, DeathReason.Kill, __instance);
+            //DeadPlayer.deadPlayers.Add(deadPlayer);
             FinalStatusPatch.FinalStatusData.FinalStatuses[target.PlayerId] = FinalStatus.Kill;
 
             SerialKiller.MurderPlayer(__instance, target);
@@ -800,8 +800,8 @@ namespace SuperNewRoles.Patches
         public static void Postfix(PlayerControl __instance)
         {
             // Collect dead player info
-            DeadPlayer deadPlayer = new(__instance, DateTime.UtcNow, DeathReason.Exile, null);
-            DeadPlayer.deadPlayers.Add(deadPlayer);
+            //DeadPlayer deadPlayer = new(__instance, DateTime.UtcNow, DeathReason.Exile, null);
+            //DeadPlayer.deadPlayers.Add(deadPlayer);
             FinalStatusPatch.FinalStatusData.FinalStatuses[__instance.PlayerId] = FinalStatus.Exiled;
             if (ModeHandler.isMode(ModeId.Default))
             {
@@ -883,3 +883,4 @@ namespace SuperNewRoles.Patches
         }
     }
 }
+*/

@@ -86,7 +86,7 @@ namespace SuperNewRoles.Sabotage.CognitiveDeficit
                     {
                         if (!(p3.isImpostor() || p3.isRole(CustomRPC.RoleId.MadKiller)))
                         {
-                            SetNamesClass.SetPlayerNameColor(p3, new Color32(18, 112, 214, byte.MaxValue));
+                            //SetNamesClass.SetPlayerNameColor(p3, new Color32(18, 112, 214, byte.MaxValue));
                         }
                     }
                 }

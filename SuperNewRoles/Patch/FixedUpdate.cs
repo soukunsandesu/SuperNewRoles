@@ -1,9 +1,9 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 using Hazel;
-using SuperNewRoles.Buttons;
+//using SuperNewRoles.Buttons;
 using SuperNewRoles.CustomOption;
 using SuperNewRoles.CustomRPC;
 using SuperNewRoles.Helpers;
@@ -82,7 +82,7 @@ namespace SuperNewRoles.Patch
                 if (AmongUsClient.Instance.GameState == AmongUsClient.GameStates.Started)
                 {
                     setBasePlayerOutlines();
-                    VentAndSabo.VentButtonVisibilityPatch.Postfix(__instance);
+                    //VentAndSabo.VentButtonVisibilityPatch.Postfix(__instance);
                     SerialKiller.FixedUpdate();
                     if (ModeHandler.isMode(ModeId.NotImpostorCheck))
                     {
@@ -193,3 +193,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

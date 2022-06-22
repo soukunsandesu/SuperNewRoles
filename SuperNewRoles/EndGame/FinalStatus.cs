@@ -11,13 +11,13 @@ namespace SuperNewRoles.EndGame
         public static class FinalStatusData
         {
             public static List<Tuple<Vector3, bool>> localPlayerPositions = new();
-            public static List<DeadPlayer> deadPlayers = new();
+            //public static List<DeadPlayer> deadPlayers = new();
             public static Dictionary<int, FinalStatus> FinalStatuses = new();
 
             public static void ClearFinalStatusData()
             {
                 localPlayerPositions = new List<Tuple<Vector3, bool>>();
-                deadPlayers = new List<DeadPlayer>();
+                //deadPlayers = new List<DeadPlayer>();
                 FinalStatuses = new Dictionary<int, FinalStatus>();
             }
         }

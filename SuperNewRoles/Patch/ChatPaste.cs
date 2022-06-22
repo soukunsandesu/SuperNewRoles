@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 namespace SuperNewRoles.Patch
 {
     class ChatPaste
@@ -31,3 +31,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

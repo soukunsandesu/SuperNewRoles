@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +35,7 @@ namespace SuperNewRoles.Patch
         {
             updateNameplate(__instance, playerInfo.PlayerId);
         }
-    }*/
+    }
     [HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.VotingComplete))]
     class VotingComplete
     {
@@ -472,7 +472,7 @@ namespace SuperNewRoles.Patch
                             if (NotBlackOut.IsAntiBlackOut(pc) && (pc.isDead() || pc.PlayerId == exiledPlayer?.PlayerId)) pc.ResetPlayerCam(15f);
                     }
                 }
-                */
+                
                 return false;
             }
             catch (Exception ex)
@@ -485,7 +485,7 @@ namespace SuperNewRoles.Patch
         {/*
             var player = CachedPlayer.AllPlayers.ToArray().Where(pc => pc.PlayerId == id).FirstOrDefault();
             if (player == null) return false;
-            */
+            
             return false;
         }
         private static Tuple<bool, byte, PlayerVoteArea> assassinVoteState(MeetingHud __instance)
@@ -591,3 +591,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/

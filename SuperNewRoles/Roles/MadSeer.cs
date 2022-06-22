@@ -15,8 +15,8 @@ namespace SuperNewRoles.Roles
             /*
             SuperNewRolesPlugin.Logger.LogInfo("[MadSeer]Impostor Check Task Count:"+RoleClass.MadSeer.ImpostorCheckTask);
             SuperNewRolesPlugin.Logger.LogInfo("[MadSeer]Finish Task Count:"+TaskCount.TaskDate(p.Data).Item1);*/
-            SuperNewRolesPlugin.Logger.LogInfo("[MadSeer]Is Validity?:" + (RoleClass.MadSeer.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1));
-            if (RoleClass.MadSeer.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1)
+            //SuperNewRolesPlugin.Logger.LogInfo("[MadSeer]Is Validity?:" + (RoleClass.MadSeer.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1));
+            //if (RoleClass.MadSeer.ImpostorCheckTask <= TaskCount.TaskDate(p.Data).Item1)
             {
                 SuperNewRolesPlugin.Logger.LogInfo("[MadSeer]Returned valid.");
                 return true;

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using TMPro;
@@ -193,7 +193,7 @@ namespace SuperNewRoles.Patch
                 foreach (var spr in button.gameObject.GetComponentsInChildren<SpriteRenderer>())
                     spr.size = new Vector2(2.2f, .7f);
                 modButtons.Add(button);
-            }*/
+            }
             for (var i = 0; i < 4; i++)
             {
                 ToggleButtonBehaviour mainbutton = null;
@@ -383,3 +383,4 @@ namespace SuperNewRoles.Patch
         }
     }
 }
+*/
