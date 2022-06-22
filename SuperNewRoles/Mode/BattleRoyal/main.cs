@@ -20,7 +20,7 @@ namespace SuperNewRoles.Mode.BattleRoyal
                 CachedPlayer.LocalPlayer.Data.Role.CanUseKillButton = true;
                 if (!IsTeamBattle)
                 {
-                    FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(Buttons.HudManagerStartPatch.setTarget());
+                    //FastDestroyableSingleton<HudManager>.Instance.KillButton.SetTarget(Buttons.HudManagerStartPatch.setTarget());
                 }
                 int alives = 0;
                 int allplayer = 0;

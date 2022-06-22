@@ -52,13 +52,13 @@ namespace SuperNewRoles.Patches
                             if (target.isDead()) return true;
                             if (!RoleClass.RemoteSheriff.KillCount.ContainsKey(__instance.PlayerId) || RoleClass.RemoteSheriff.KillCount[__instance.PlayerId] >= 1)
                             {
-                                if (!Sheriff.IsRemoteSheriffKill(target) || target.isRole(RoleId.RemoteSheriff))
+                                //if (!Sheriff.IsRemoteSheriffKill(target) || target.isRole(RoleId.RemoteSheriff))
                                 {
                                     FinalStatusPatch.FinalStatusData.FinalStatuses[__instance.PlayerId] = FinalStatus.SheriffMisFire;
                                     __instance.RpcMurderPlayer(__instance);
                                     return true;
                                 }
-                                else
+                                //else
                                 {
                                     FinalStatusPatch.FinalStatusData.FinalStatuses[target.PlayerId] = FinalStatus.SheriffKill;
                                     if (RoleClass.RemoteSheriff.KillCount.ContainsKey(__instance.PlayerId))
@@ -95,7 +95,7 @@ namespace SuperNewRoles.Patches
                             {
                                 if (p.isAlive() && p.PlayerId != __instance.PlayerId)
                                 {
-                                    if (SelfBomber.GetIsBomb(__instance, p))
+                                    //if (SelfBomber.GetIsBomb(__instance, p))
                                     {
                                         __instance.RpcMurderPlayerCheck(p);
                                     }
@@ -113,10 +113,10 @@ namespace SuperNewRoles.Patches
                                 {
                                     if (p.isAlive() && p.PlayerId != __instance.PlayerId)
                                     {
-                                        if (Samurai.Getsword(__instance, p))
+                                        //if (Samurai.Getsword(__instance, p))
                                         {
                                             __instance.RpcMurderPlayerCheck(p);
-                                            Samurai.IsSword();
+                                            //Samurai.IsSword();
                                         }
                                     }
                                 }
@@ -197,7 +197,7 @@ namespace SuperNewRoles.Patches
                         if (player.isAlive())
                         {
                             var Target = player;
-                            var misfire = !Roles.Sheriff.IsRemoteSheriffKill(Target);
+                            var misfire = false;// !Roles.Sheriff.IsRemoteSheriffKill(Target);
                             var TargetID = Target.PlayerId;
                             var LocalID = CachedPlayer.LocalPlayer.PlayerId;
 
@@ -215,7 +215,7 @@ namespace SuperNewRoles.Patches
                             AmongUsClient.Instance.FinishRpcImmediately(killWriter);
                             RoleClass.RemoteSheriff.KillMaxCount--;
                         }
-                        Sheriff.ResetKillCoolDown();
+                        //Sheriff.ResetKillCoolDown();
                     };
                 }
                 __instance.Close();
@@ -386,12 +386,12 @@ namespace SuperNewRoles.Patches
                         case RoleId.Sheriff:
                             if (!RoleClass.Sheriff.KillCount.ContainsKey(__instance.PlayerId) || RoleClass.Sheriff.KillCount[__instance.PlayerId] >= 1)
                             {
-                                if (!Sheriff.IsSheriffKill(target))
+                                //if (!Sheriff.IsSheriffKill(target))
                                 {
                                     FinalStatusPatch.FinalStatusData.FinalStatuses[__instance.PlayerId] = FinalStatus.SheriffMisFire;
                                     __instance.RpcMurderPlayer(__instance);
                                 }
-                                else
+                                //else
                                 {
                                     FinalStatusPatch.FinalStatusData.FinalStatuses[target.PlayerId] = FinalStatus.SheriffKill;
                                     if (RoleClass.Sheriff.KillCount.ContainsKey(__instance.PlayerId))

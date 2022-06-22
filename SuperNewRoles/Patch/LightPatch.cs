@@ -18,7 +18,7 @@ namespace SuperNewRoles.Patch
                 return SubmergedCompatibility.GetSubmergedNeutralLightRadius(isImpostor);
             }
 
-            if (Clergyman.IsLightOutVision() && isImpostor)
+            if (false)//Clergyman.IsLightOutVision() && isImpostor)
             {
                 return shipStatus.MaxLightRadius * RoleClass.Clergyman.DownImpoVision;
             }

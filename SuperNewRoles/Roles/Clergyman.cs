@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using Hazel;
 using SuperNewRoles.Buttons;
 
@@ -72,3 +72,4 @@ namespace SuperNewRoles.Roles
         }
     }
 }
+*/

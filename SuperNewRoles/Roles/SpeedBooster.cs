@@ -1,5 +1,5 @@
 using System;
-using HarmonyLib;
+/*using HarmonyLib;
 using Hazel;
 using SuperNewRoles.Buttons;
 using SuperNewRoles.Mode;
@@ -74,3 +74,4 @@ namespace SuperNewRoles.Roles
         }
     }
 }
+*/

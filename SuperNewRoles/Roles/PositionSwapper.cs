@@ -9,8 +9,8 @@ namespace SuperNewRoles.Roles
     class PositionSwapper
     {
         public static void ResetCoolDown(){
-            HudManagerStartPatch.PositionSwapperButton.MaxTimer = RoleClass.PositionSwapper.CoolTime;
-            HudManagerStartPatch.PositionSwapperButton.Timer = RoleClass.PositionSwapper.CoolTime;
+            //HudManagerStartPatch.PositionSwapperButton.MaxTimer = RoleClass.PositionSwapper.CoolTime;
+            //HudManagerStartPatch.PositionSwapperButton.Timer = RoleClass.PositionSwapper.CoolTime;
             RoleClass.PositionSwapper.ButtonTimer = DateTime.Now;
         }
         public static void EndMeeting(){

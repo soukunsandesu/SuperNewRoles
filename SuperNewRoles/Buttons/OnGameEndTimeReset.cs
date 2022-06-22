@@ -17,8 +17,8 @@ namespace SuperNewRoles.Buttons
         }
         public static void Patch()
         {
-            Roles.SpeedBooster.ResetSpeed();
-            Roles.EvilSpeedBooster.ResetSpeed();
+            //Roles.SpeedBooster.ResetSpeed();
+            //Roles.EvilSpeedBooster.ResetSpeed();
             Roles.Lighter.LightOutEnd();
             Camera.main.orthographicSize = RoleClass.Hawk.Default;
             FastDestroyableSingleton<HudManager>.Instance.UICamera.orthographicSize = RoleClass.Hawk.Default;

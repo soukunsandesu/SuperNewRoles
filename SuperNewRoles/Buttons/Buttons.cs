@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -71,8 +71,8 @@ namespace SuperNewRoles.Buttons
 
         public static void setCustomButtonCooldowns()
         {
-            Sheriff.ResetKillCoolDown();
-            Clergyman.ResetCoolDown();
+            //Sheriff.ResetKillCoolDown();
+            //Clergyman.ResetCoolDown();
             Teleporter.ResetCoolDown();
             Jackal.resetCoolDown();
             //クールダウンリセット
@@ -668,7 +668,7 @@ namespace SuperNewRoles.Buttons
                         {
                             RoleClass.Sheriff.KillMaxCount--;
                             var Target = PlayerControlFixedUpdatePatch.setTarget();
-                            var misfire = !Roles.Sheriff.IsSheriffKill(Target);
+                            var misfire = false;//!Roles.Sheriff.IsSheriffKill(Target);
                             var TargetID = Target.PlayerId;
                             var LocalID = CachedPlayer.LocalPlayer.PlayerId;
 
@@ -725,14 +725,14 @@ namespace SuperNewRoles.Buttons
                     RoleClass.Clergyman.IsLightOff = true;
                     Roles.RoleClass.Clergyman.ButtonTimer = DateTime.Now;
                     ClergymanLightOutButton.actionButton.cooldownTimerText.color = new Color(0F, 0.8F, 0F);
-                    Clergyman.LightOutStart();
+                    //Clergyman.LightOutStart();
                 },
                 () => { return PlayerControl.LocalPlayer.isAlive() && Clergyman.isClergyman(PlayerControl.LocalPlayer); },
                 () =>
                 {
                     return ClergymanLightOutButton.Timer <= 0;
                 },
-                () => { Clergyman.EndMeeting(); },
+                () => { //Clergyman.EndMeeting(); },
                 RoleClass.Clergyman.getButtonSprite(),
                 new Vector3(-1.8f, -0.06f, 0),
                 __instance,
@@ -1554,7 +1554,7 @@ namespace SuperNewRoles.Buttons
                     }
                     else{
                         PositionSwapperNumText.text = "";
-                    }*/
+                    }
                     //RoleClass.PositionSwapper.ButtonTimer = DateTime.Now;
                     PositionSwapperButton.actionButton.cooldownTimerText.color = new Color(255F, 255F, 255F);
                     PositionSwapper.SwapStart();
@@ -1594,3 +1594,4 @@ namespace SuperNewRoles.Buttons
         }
     }
 }
+*/

@@ -622,7 +622,7 @@ namespace SuperNewRoles.CustomRPC
             if (AmongUsClient.Instance.GameState != InnerNet.InnerNetClient.GameStates.Started) return;
             if (Start)
             {
-                Roles.Clergyman.LightOutStartRPC();
+                //Roles.Clergyman.LightOutStartRPC();
             }
             else
             {
@@ -840,7 +840,7 @@ namespace SuperNewRoles.CustomRPC
             source.ProtectPlayer(target, colorid);
             PlayerControl.LocalPlayer.MurderPlayer(target);
             source.ProtectPlayer(target, colorid);
-            if (targetId == CachedPlayer.LocalPlayer.PlayerId) Buttons.HudManagerStartPatch.ShielderButton.Timer = 0f;
+            //if (targetId == CachedPlayer.LocalPlayer.PlayerId) Buttons.HudManagerStartPatch.ShielderButton.Timer = 0f;
         }
         public static void SetShielder(byte PlayerId, bool Is)
         {

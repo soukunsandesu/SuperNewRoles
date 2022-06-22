@@ -10,9 +10,9 @@ namespace SuperNewRoles.Roles
     {
         public static void ResetCoolDown()
         {
-            HudManagerStartPatch.SpeederButton.MaxTimer = RoleClass.Speeder.CoolTime;
-            HudManagerStartPatch.SpeederButton.Timer = HudManagerStartPatch.SpeederButton.MaxTimer;
-            HudManagerStartPatch.SpeederButton.actionButton.cooldownTimerText.color = Color.white;
+            //HudManagerStartPatch.SpeederButton.MaxTimer = RoleClass.Speeder.CoolTime;
+            //HudManagerStartPatch.SpeederButton.Timer = HudManagerStartPatch.SpeederButton.MaxTimer;
+            //HudManagerStartPatch.SpeederButton.actionButton.cooldownTimerText.color = Color.white;
         }
         public static void DownStart()
         {
@@ -70,7 +70,7 @@ namespace SuperNewRoles.Roles
     {
         public static void Postfix()
         {
-            if (HudManagerStartPatch.SpeederButton.Timer <= 0.1 && RoleClass.Speeder.IsSpeedDown)
+            //if (HudManagerStartPatch.SpeederButton.Timer <= 0.1 && RoleClass.Speeder.IsSpeedDown)
             {
                 Speeder.SpeedDownEnd();
             }

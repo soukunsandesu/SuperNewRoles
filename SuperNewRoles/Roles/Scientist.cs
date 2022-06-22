@@ -26,7 +26,7 @@ namespace SuperNewRoles.Roles
             {
                 CoolTime = RoleClass.NiceScientist.CoolTime;
             }
-            HudManagerStartPatch.ScientistButton.MaxTimer = CoolTime;
+            //HudManagerStartPatch.ScientistButton.MaxTimer = CoolTime;
             RoleClass.NiceScientist.ButtonTimer = DateTime.Now;
         }
         public static void Start()
@@ -37,7 +37,7 @@ namespace SuperNewRoles.Roles
             writer.Write(CachedPlayer.LocalPlayer.PlayerId);
             AmongUsClient.Instance.FinishRpcImmediately(writer);
             CustomRPC.RPCProcedure.SetScientistRPC(true, CachedPlayer.LocalPlayer.PlayerId);
-            SpeedBooster.ResetCoolDown();
+            //SpeedBooster.ResetCoolDown();
         }
         public static void ResetScientist() { }
         public static void ScientistEnd()

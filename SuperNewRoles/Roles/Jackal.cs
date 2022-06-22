@@ -11,10 +11,10 @@ namespace SuperNewRoles.Roles
     {
         public static void resetCoolDown()
         {
-            HudManagerStartPatch.JackalKillButton.MaxTimer = RoleClass.Jackal.KillCoolDown;
-            HudManagerStartPatch.JackalKillButton.Timer = RoleClass.Jackal.KillCoolDown;
-            HudManagerStartPatch.JackalSidekickButton.MaxTimer = RoleClass.Jackal.KillCoolDown;
-            HudManagerStartPatch.JackalSidekickButton.Timer = RoleClass.Jackal.KillCoolDown;
+            //HudManagerStartPatch.JackalKillButton.MaxTimer = RoleClass.Jackal.KillCoolDown;
+            //HudManagerStartPatch.JackalKillButton.Timer = RoleClass.Jackal.KillCoolDown;
+            //HudManagerStartPatch.JackalSidekickButton.MaxTimer = RoleClass.Jackal.KillCoolDown;
+            //HudManagerStartPatch.JackalSidekickButton.Timer = RoleClass.Jackal.KillCoolDown;
         }
         public static void EndMeeting()
         {

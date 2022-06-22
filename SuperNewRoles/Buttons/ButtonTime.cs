@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -37,15 +37,15 @@ namespace SuperNewRoles.Buttons
             if (Roles.RoleClass.NiceScientist.IsScientist)
             {
                 var TimeSpanDate = new TimeSpan(0, 0, 0, (int)durationtime);
-                Buttons.HudManagerStartPatch.ScientistButton.MaxTimer = durationtime;
-                Buttons.HudManagerStartPatch.ScientistButton.Timer = (float)((Roles.RoleClass.NiceScientist.ButtonTimer + TimeSpanDate) - DateTime.Now).TotalSeconds;
-                if (Buttons.HudManagerStartPatch.ScientistButton.Timer <= 0f)
-                {
+                //Buttons.HudManagerStartPatch.ScientistButton.MaxTimer = durationtime;
+                //Buttons.HudManagerStartPatch.ScientistButton.Timer = (float)((Roles.RoleClass.NiceScientist.ButtonTimer + TimeSpanDate) - DateTime.Now).TotalSeconds;
+                //if (Buttons.HudManagerStartPatch.ScientistButton.Timer <= 0f)
+                //{
                     Roles.Scientist.ScientistEnd();
                     Roles.Scientist.ResetCoolDown();
-                    Buttons.HudManagerStartPatch.ScientistButton.MaxTimer = cooltime;
+                //    Buttons.HudManagerStartPatch.ScientistButton.MaxTimer = cooltime;
                     Roles.RoleClass.NiceScientist.IsScientist = false;
-                    Buttons.HudManagerStartPatch.ScientistButton.actionButton.cooldownTimerText.color = Color.white;
+                //    Buttons.HudManagerStartPatch.ScientistButton.actionButton.cooldownTimerText.color = Color.white;
                     Roles.RoleClass.NiceScientist.ButtonTimer = DateTime.Now;
                 }
             }
@@ -207,17 +207,17 @@ namespace SuperNewRoles.Buttons
             if (Roles.RoleClass.EvilSpeedBooster.IsSpeedBoost)
             {
                 var TimeSpanDate = new TimeSpan(0, 0, 0, (int)Roles.RoleClass.EvilSpeedBooster.DurationTime);
-                Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.MaxTimer = Roles.RoleClass.EvilSpeedBooster.DurationTime;
-                Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.Timer = (float)((Roles.RoleClass.EvilSpeedBooster.ButtonTimer + TimeSpanDate) - DateTime.Now).TotalSeconds;
-                if (Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.Timer <= 0f)
-                {
-                    Roles.EvilSpeedBooster.SpeedBoostEnd();
-                    Roles.EvilSpeedBooster.ResetCoolDown();
-                    Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.MaxTimer = Roles.RoleClass.EvilSpeedBooster.CoolTime;
+                //Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.MaxTimer = Roles.RoleClass.EvilSpeedBooster.DurationTime;
+                //Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.Timer = (float)((Roles.RoleClass.EvilSpeedBooster.ButtonTimer + TimeSpanDate) - DateTime.Now).TotalSeconds;
+                //if (Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.Timer <= 0f)
+                //{
+                    //Roles.EvilSpeedBooster.SpeedBoostEnd();
+                    //Roles.EvilSpeedBooster.ResetCoolDown();
+                    //Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.MaxTimer = Roles.RoleClass.EvilSpeedBooster.CoolTime;
                     Roles.RoleClass.EvilSpeedBooster.IsSpeedBoost = false;
-                    Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.actionButton.cooldownTimerText.color = Color.white;
+                    //Buttons.HudManagerStartPatch.EvilSpeedBoosterBoostButton.actionButton.cooldownTimerText.color = Color.white;
                     Roles.RoleClass.EvilSpeedBooster.ButtonTimer = DateTime.Now;
-                }
+                //}
             }
             else
             {
@@ -232,3 +232,4 @@ namespace SuperNewRoles.Buttons
         }
     }
 }
+*/

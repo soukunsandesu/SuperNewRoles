@@ -106,7 +106,7 @@ namespace SuperNewRoles.Roles
             if (Arsonist.isDead()) return false;
             return true;
         }
-
+        /*
         [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
         public class HudManagerUpdatePatch
         {
@@ -133,7 +133,7 @@ namespace SuperNewRoles.Roles
                 }
             }
         }
-
+        */
         public static bool IsArsonistWinFlag()
         {
             foreach (PlayerControl player in RoleClass.Arsonist.ArsonistPlayer)

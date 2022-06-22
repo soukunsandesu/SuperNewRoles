@@ -190,7 +190,7 @@ namespace SuperNewRoles.Buttons
             if (AmongUsClient.Instance.GameState != InnerNet.InnerNetClient.GameStates.Started) return;
 
             CustomButton.HudUpdate();
-            ButtonTime.Update();
+            //ButtonTime.Update();
         }
     }
 }
