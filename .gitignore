@@ -4,5 +4,3 @@ SuperNewRoles/bin/
 *.dll
 SuperNewRoles/SuperNewRoles.csproj.user
 .vs/
-SuperNewRoles/obj/*
-SuperNewRoles/obj/Debug/netstandard2.1/SuperNewRoles.GeneratedMSBuildEditorConfig.editorconfig
